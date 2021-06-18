@@ -131,6 +131,7 @@ button.active:hover::after {
   grid-gap: 1.5rem;
   grid-template-columns: repeat(3, minmax(100px, 300px));
   /* grid-template-rows: repeat(200, minmax(66px, 200px)); */
+  padding-bottom: 4rem;
 }
 
 .card{

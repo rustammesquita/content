@@ -289,7 +289,7 @@ function InsertPhotos()
     var divphoto = document.createElement("DIV");
     divphoto.className = "card";
     divphoto.photo = photo;
-    img.src = "images/" + photo.name;
+    img.src = "images/" + "min_" + photo.name;
     img.className = "photo"
     photo.index = i;
     photo.show = true;
@@ -304,8 +304,11 @@ function InsertPhotos()
     {
       RemoveClass(img, "selected");
     }
-    divphoto.onmousedown = function ()
+    divphoto.onmousedown = function (event)
     {
+      if (event.which != 1)
+        return;
+        
       RemoveClass(img, "selected");
       ShowPhoto(photo.index);
     }
