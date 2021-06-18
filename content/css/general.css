@@ -1,0 +1,32 @@
+:root {
+  --bt_size: 2.5rem;
+  --highlight-color: white;
+  --passive-color: rgb(200, 200, 200);
+  --contrast-color: rgb(75, 75, 75);
+  --shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  /* Safari */
+  -webkit-user-select: none;
+  /* IE 10 and IE 11 */
+  -ms-user-select: none;
+  user-select: none;
+  background-color: var(--passive-color);
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.footnote{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 3.5rem;
+  padding-top: 0.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--contrast-color);
+}
