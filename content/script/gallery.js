@@ -328,7 +328,6 @@ function InsertPhoto(i)
   var slideshow = document.getElementsByClassName("slideshow")[0];
   slideshow.ontouchstart = function myFunction(event) {
     mouse_x_begin = event.touches[0].clientX;
-    alert(mouse_x_begin);
   }
   slideshow.ontouchmove = function myFunction(event) {
     mouse_x_end = event.touches[0].clientX;
@@ -423,7 +422,6 @@ function ShowPhoto(i)
     img.className = "zoom";
     image.style.borderStyle = "solid";
     
-    console.log(window.isMobile());
     if (!window.isMobile())
     {
       var nextdiv = document.getElementsByClassName("next")[0];
