@@ -331,10 +331,12 @@ function InsertPhoto(i)
   }
   slideshow.ontouchmove = function myFunction(event) {
     mouse_x_end = event.touches[0].clientX;
-    alert(mouse_x_end);
   }
   slideshow.ontouchend = function myFunction(event) {
-    alert(mouse_x_begin - mouse_x_end);
+    if (event.touches[0].clientX != undefined)
+      mouse_x_end = event.touches[0].clientX;
+    alert(mouse_x_begin);
+    alert(mouse_x_end);
     if (mouse_x_begin - mouse_x_end > 0)
       NextPhoto();
     else if (mouse_x_begin - mouse_x_end < 0)
