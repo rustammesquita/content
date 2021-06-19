@@ -410,15 +410,19 @@ function ShowPhoto(i)
     prevdiv.style.opacity = "0%";
     
   var imgblur = document.createElement("IMG");
-  imgblur.src = "images/" + "low_" + lst_photos[i].name;
+  imgblur.src = "images/" + "min_" + lst_photos[i].name;
   imgblur.className = "zoom";
   imgblur.style.filter = "blur(4px)";
+  imgblur.style.width = "300%";
+  imgblur.style.height = "300%";
+  image.style.borderStyle = "none";
   image.appendChild(imgblur);
   
   img.addEventListener("load", function()
   {
     image.removeChild(image.lastElementChild);
     img.className = "zoom";
+    image.style.borderStyle = "solid";
   });
 }
 
