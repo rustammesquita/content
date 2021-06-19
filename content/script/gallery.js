@@ -284,7 +284,8 @@ function InsertPhoto(i)
   divphoto.className = "card";
   divphoto.photo = photo;
   img.src = "images/" + "min_" + photo.name;
-  img.className = "photo"
+  img.className = "photo";
+  img.loading = "lazy";
   photo.index = i;
   photo.show = true;
   divphoto.appendChild(img);
@@ -321,6 +322,20 @@ function InsertPhoto(i)
     photo.show = false;
     divphoto.className += " hidden";
   }
+  
+  var category = sessionStorage.getItem("category");
+  if (category != undefined && category != "All")
+  {
+    var hide = true;
+    Array.from(photo.categories, cat => {
+      if (cat.toLowerCase() == category.toLowerCase())
+      {
+        hide = false;
+      }
+    });
+    if (hide)
+      divphoto.hide();
+  }
 }
 
 function InsertPhotos()
@@ -331,6 +346,7 @@ function InsertPhotos()
   }
   lst_photos = lst_photos[5];
   
+  // insert all photos recursively
   InsertPhoto(0);
 }
 
@@ -441,6 +457,7 @@ function PrevPhoto()
 
 function ShowAll()
 {
+  sessionStorage.setItem("category", "All");
   document.getElementsByClassName("active")[0].className = "inactive";
   document.getElementById("All").className = "active";
   Array.from(document.getElementsByClassName("card"), card => {
@@ -457,6 +474,7 @@ function HideAll()
 
 function ShowCategory(category)
 {
+  sessionStorage.setItem("category", category);
   document.getElementsByClassName("active")[0].className = "inactive";
   document.getElementById(category).className = "active";
   Array.from(document.getElementsByClassName("card"), card => {
