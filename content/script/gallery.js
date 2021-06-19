@@ -3,6 +3,8 @@ var lst_photos = [[], [], [], [], [], []];
 var image_click = false;
 var change_photo = false;
 var selected_photo;
+var mouse_x_begin;
+var mouse_x_end;
 
 lst_ids = lst_ids.concat(
 [
@@ -323,6 +325,20 @@ function InsertPhoto(i)
     divphoto.className += " hidden";
   }
   
+  var slideshow = document.getElementsByClassName("slideshow")[0];
+  slideshow.ontouchstart = function myFunction(event) {
+    mouse_x_begin = event.touches[0].clientX;
+  }
+  slideshow.ontouchmove = function myFunction(event) {
+    mouse_x_end = event.touches[0].clientX;
+  }
+  slideshow.ontouchend = function myFunction(event) {
+    if (mouse_x_begin - mouse_x_end > 0)
+      NextPhoto();
+    else if (mouse_x_begin - mouse_x_end < 0)
+      PrevPhoto();
+  }
+  
   var category = sessionStorage.getItem("category");
   if (category != undefined && category != "All")
   {
@@ -404,12 +420,16 @@ function ShowPhoto(i)
     img.className = "zoom";
     image.style.borderStyle = "solid";
     
-    var nextdiv = document.getElementsByClassName("next")[0];
-    var prevdiv = document.getElementsByClassName("prev")[0];
-    if (GetNextPhotoIndex() > selected_photo)
-      nextdiv.style.opacity = "100%";
-    if (GetPrevPhotoIndex() < selected_photo)
-      prevdiv.style.opacity = "100%";
+    console.log(window.isMobile());
+    if (!window.isMobile())
+    {
+      var nextdiv = document.getElementsByClassName("next")[0];
+      var prevdiv = document.getElementsByClassName("prev")[0];
+      if (GetNextPhotoIndex() > selected_photo)
+        nextdiv.style.opacity = "100%";
+      if (GetPrevPhotoIndex() < selected_photo)
+        prevdiv.style.opacity = "100%";
+    }
   });
 }
 
