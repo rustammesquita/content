@@ -390,10 +390,11 @@ function ShowPhoto(i)
 {
   var img = document.createElement("IMG");
   img.src = "images/" + lst_photos[i].name;
-  img.className = "zoom"
+  img.className = "zoom hidden";
   selected_photo = i;
+  var image = document.getElementsByClassName("image")[0];
   document.getElementsByClassName("slideshow")[0].style.display = "grid";
-  document.getElementsByClassName("image")[0].appendChild(img);
+  image.appendChild(img);
   document.getElementsByTagName("BODY")[0].style.overflow = "hidden";
   
   var nextdiv = document.getElementsByClassName("next")[0];
@@ -407,6 +408,18 @@ function ShowPhoto(i)
     prevdiv.style.opacity = "100%";
   else
     prevdiv.style.opacity = "0%";
+    
+  var imgblur = document.createElement("IMG");
+  imgblur.src = "images/" + "low_" + lst_photos[i].name;
+  imgblur.className = "zoom";
+  imgblur.style.filter = "blur(4px)";
+  image.appendChild(imgblur);
+  
+  img.addEventListener("load", function()
+  {
+    image.removeChild(image.lastElementChild);
+    img.className = "zoom";
+  });
 }
 
 function RemoveSelectedPhoto()
