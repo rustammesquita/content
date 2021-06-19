@@ -392,43 +392,36 @@ function ShowPhoto(i)
   img.src = "images/" + lst_photos[i].name;
   img.className = "zoom hidden";
   selected_photo = i;
+  
   var image = document.getElementsByClassName("image")[0];
   document.getElementsByClassName("slideshow")[0].style.display = "grid";
   image.appendChild(img);
   document.getElementsByTagName("BODY")[0].style.overflow = "hidden";
   
-  var nextdiv = document.getElementsByClassName("next")[0];
-  var prevdiv = document.getElementsByClassName("prev")[0];
-  if (GetNextPhotoIndex() > selected_photo)
-    nextdiv.style.opacity = "100%";
-  else
-    nextdiv.style.opacity = "0%";
-  
-  if (GetPrevPhotoIndex() < selected_photo)
-    prevdiv.style.opacity = "100%";
-  else
-    prevdiv.style.opacity = "0%";
-    
-  var imgblur = document.createElement("IMG");
-  imgblur.src = "images/" + "min_" + lst_photos[i].name;
-  imgblur.className = "zoom";
-  imgblur.style.filter = "blur(4px)";
-  imgblur.style.width = "300%";
-  imgblur.style.height = "300%";
   image.style.borderStyle = "none";
-  image.appendChild(imgblur);
-  
   img.addEventListener("load", function()
   {
-    image.removeChild(image.lastElementChild);
     img.className = "zoom";
     image.style.borderStyle = "solid";
+    
+    var nextdiv = document.getElementsByClassName("next")[0];
+    var prevdiv = document.getElementsByClassName("prev")[0];
+    if (GetNextPhotoIndex() > selected_photo)
+      nextdiv.style.opacity = "100%";
+    if (GetPrevPhotoIndex() < selected_photo)
+      prevdiv.style.opacity = "100%";
   });
 }
 
 function RemoveSelectedPhoto()
 {
+  var nextdiv = document.getElementsByClassName("next")[0];
+  var prevdiv = document.getElementsByClassName("prev")[0];
+  nextdiv.style.opacity = "0%";
+  prevdiv.style.opacity = "0%";
+  
   var img_div = document.getElementsByClassName("image")[0];
+  img_div.style.borderStyle = "none";
   var child = img_div.lastElementChild; 
   while (child) {
     img_div.removeChild(child);
