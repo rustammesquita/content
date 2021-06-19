@@ -333,10 +333,15 @@ function InsertPhoto(i)
     mouse_x_end = event.touches[0].clientX;
   }
   slideshow.ontouchend = function myFunction(event) {
+    if (mouse_x_begin == undefined || mouse_x_end == undefined)
+      return;
     if (mouse_x_begin - mouse_x_end > 0)
       NextPhoto();
     else if (mouse_x_begin - mouse_x_end < 0)
       PrevPhoto();
+
+    mouse_x_begin = undefined;
+    mouse_x_end = undefined;
   }
   
   var category = sessionStorage.getItem("category");
