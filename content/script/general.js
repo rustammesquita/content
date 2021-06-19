@@ -27,7 +27,7 @@ var lst_ids = [
 
 if (sessionStorage.getItem("lang") == undefined)
 {
-  sessionStorage.setItem("lang", eng_lang);
+  sessionStorage.setItem("lang", pt_lang);
 }
 
 window.isMobile = function() {
