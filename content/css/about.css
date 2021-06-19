@@ -28,7 +28,7 @@
 .profile{
   width: 100%;
   max-width: 40rem;
-  padding-top: 2.5rem;
+  padding-top: 2.3rem;
   padding-bottom: 2.5rem;
   padding-left: 1rem;
   text-align: justify;
@@ -42,11 +42,9 @@
 
 p{
   /* text-indent: 1.5em; */
-  padding-right: 2rem;
 }
 
-p.section{
+.section{
   border-top: 1px solid;
-  padding-top: 1rem;
-  /* background-color: red; */
+  margin-right: 2rem;
 }
