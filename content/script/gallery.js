@@ -285,7 +285,7 @@ function InsertPhoto(i)
   divphoto.photo = photo;
   img.src = "images/" + "min_" + photo.name;
   img.className = "photo";
-  img.loading = "lazy";
+  // img.loading = "lazy";
   photo.index = i;
   photo.show = true;
   divphoto.appendChild(img);
@@ -348,6 +348,14 @@ function InsertPhotos()
   
   // insert all photos recursively
   InsertPhoto(0);
+  
+  var id = "All";
+  var category = sessionStorage.getItem("category");
+  if (category != undefined && category != "All")
+  {
+    id = category;
+  }
+  document.getElementById(id).className = "active";
 }
 
 function GetPrevPhotoIndex()
