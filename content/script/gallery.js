@@ -273,58 +273,65 @@ document.onkeydown = function(evt) {
     HidePhoto();
 };
 
+function InsertPhoto(i)
+{
+  var photo = lst_photos[i];
+  if (photo == undefined)
+    return;
+  var grid = document.getElementsByClassName("grid")[0];
+  var img = document.createElement("IMG");
+  var divphoto = document.createElement("DIV");
+  divphoto.className = "card";
+  divphoto.photo = photo;
+  img.src = "images/" + "min_" + photo.name;
+  img.className = "photo"
+  photo.index = i;
+  photo.show = true;
+  divphoto.appendChild(img);
+  grid.appendChild(divphoto);
+  
+  img.addEventListener("load", function()
+  {
+    InsertPhoto(i+1);
+  });
+  
+  divphoto.onmouseover = function ()
+  {
+    img.className += " selected";
+  }
+  divphoto.onmouseleave = function ()
+  {
+    RemoveClass(img, "selected");
+  }
+  divphoto.onmousedown = function (event)
+  {
+    if (event.which != 1)
+      return;
+      
+    RemoveClass(img, "selected");
+    ShowPhoto(photo.index);
+  }
+  divphoto.show = function ()
+  {
+    photo.show = true;
+    RemoveClass(divphoto, "hidden");
+  }
+  divphoto.hide = function ()
+  {
+    photo.show = false;
+    divphoto.className += " hidden";
+  }
+}
+
 function InsertPhotos()
 {
-  var grid = document.getElementsByClassName("grid")[0];
-  
   for (var k = 4; k >= 0; k--)
   {
     lst_photos[5] = lst_photos[5].concat(lst_photos[k]);
   }
   lst_photos = lst_photos[5];
   
-  var i = 0;
-  lst_photos.forEach(photo => {
-    var img = document.createElement("IMG");
-    var divphoto = document.createElement("DIV");
-    divphoto.className = "card";
-    divphoto.photo = photo;
-    img.src = "images/" + "min_" + photo.name;
-    img.className = "photo"
-    photo.index = i;
-    photo.show = true;
-    divphoto.appendChild(img);
-    grid.appendChild(divphoto);
-    
-    divphoto.onmouseover = function ()
-    {
-      img.className += " selected";
-    }
-    divphoto.onmouseleave = function ()
-    {
-      RemoveClass(img, "selected");
-    }
-    divphoto.onmousedown = function (event)
-    {
-      if (event.which != 1)
-        return;
-        
-      RemoveClass(img, "selected");
-      ShowPhoto(photo.index);
-    }
-    divphoto.show = function ()
-    {
-      photo.show = true;
-      RemoveClass(divphoto, "hidden");
-    }
-    divphoto.hide = function ()
-    {
-      photo.show = false;
-      divphoto.className += " hidden";
-    }
-    
-    i++;
-  });
+  InsertPhoto(0);
 }
 
 function GetPrevPhotoIndex()
