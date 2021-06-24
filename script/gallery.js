@@ -289,7 +289,7 @@ function InsertPhoto(i)
   var img = divphoto.lastElementChild;
   var photo = divphoto.photo;
   img.src = "images/" + "min_" + photo.name;
-  img.loading = "lazy";
+  //img.loading = "lazy";
   img.addEventListener("load", function()
   {
     InsertPhoto(i+1);
