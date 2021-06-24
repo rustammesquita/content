@@ -17,6 +17,10 @@ body{
   background-color: var(--passive-color);
 }
 
+html{
+  scrollbar-width: none;
+}
+
 ::-webkit-scrollbar{
   display: none;
 }

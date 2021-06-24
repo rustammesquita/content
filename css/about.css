@@ -40,9 +40,9 @@
   font-family: Georgia, 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans',serif
 }
 
-p{
-  /* text-indent: 1.5em; */
-}
+/* p{
+  text-indent: 1.5em;
+} */
 
 .section{
   border-top: 1px solid;
