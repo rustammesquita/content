@@ -293,6 +293,7 @@ function InsertPhoto(i)
   {
     InsertPhoto(i+1);
   });
+  divphoto.show();
 }
 
 function CreatePhotoCard(i)
@@ -306,7 +307,7 @@ function CreatePhotoCard(i)
   var grid = document.getElementsByClassName("grid")[0];
   var img = document.createElement("IMG");
   var divphoto = document.createElement("DIV");
-  divphoto.className = "card";
+  divphoto.className = "card hidden";
   divphoto.photo = photo;
   img.className = "photo";
   photo.index = i;
@@ -415,7 +416,7 @@ function GetPhotoParam()
   var i = params.indexOf("zoom=");
   if (i > 0)
   {
-    var photo = params[i+5];
+    var photo = params.substring(i+5, params.length);
     if (photo != undefined)
       return Number(photo);
   }
