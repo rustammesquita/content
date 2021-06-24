@@ -5,6 +5,7 @@ var change_photo = false;
 var selected_photo;
 var mouse_x_begin;
 var mouse_x_end;
+var org_width = window.innerWidth;
 
 lst_ids = lst_ids.concat(
 [
@@ -344,13 +345,13 @@ function CreatePhotoCard(i)
   
   var slideshow = document.getElementsByClassName("slideshow")[0];
   slideshow.ontouchstart = function myFunction(event) {
-    if (event.touches.length == 1)
+    if (event.touches.length == 1 && org_width == window.innerWidth)
       mouse_x_begin = event.touches[0].clientX;
     else
       mouse_x_begin = undefined;
   }
   slideshow.ontouchmove = function myFunction(event) {
-    if (event.touches.length == 1)
+    if (event.touches.length == 1 && org_width == window.innerWidth)
       mouse_x_end = event.touches[0].clientX;
     else
       mouse_x_end = undefined;
