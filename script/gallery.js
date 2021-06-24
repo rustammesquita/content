@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", InsertPhotos);
+document.addEventListener("DOMContentLoaded", LoadPhotos);
 var lst_photos = [[], [], [], [], [], []];
 var image_click = false;
 var change_photo = false;
@@ -279,7 +279,10 @@ function InsertPhoto(i)
 {
   var photo = lst_photos[i];
   if (photo == undefined)
+  {
+    AllLoadedPhotosCB();
     return;
+  }
   var grid = document.getElementsByClassName("grid")[0];
   var img = document.createElement("IMG");
   var divphoto = document.createElement("DIV");
@@ -359,7 +362,7 @@ function InsertPhoto(i)
   }
 }
 
-function InsertPhotos()
+function LoadPhotos()
 {
   for (var k = 4; k >= 0; k--)
   {
@@ -377,6 +380,41 @@ function InsertPhotos()
     id = category;
   }
   document.getElementById(id).className = "active";
+  
+  OpenPhoto();
+}
+
+function AllLoadedPhotosCB()
+{
+  if (!window.isMobile())
+  {
+    var nextdiv = document.getElementsByClassName("next")[0];
+    var prevdiv = document.getElementsByClassName("prev")[0];
+    if (GetNextPhotoIndex() > selected_photo)
+      nextdiv.style.opacity = "100%";
+    if (GetPrevPhotoIndex() < selected_photo)
+      prevdiv.style.opacity = "100%";
+  }
+}
+
+function GetPhotoParam()
+{
+  var params = window.location.search;
+  var i = params.indexOf("zoom=");
+  if (i > 0)
+  {
+    var photo = params[i+5];
+    if (photo != undefined)
+      return Number(photo);
+  }
+  return -1;
+}
+
+function OpenPhoto()
+{
+  var photo = GetPhotoParam();
+  if (photo >= 0)
+    ShowPhoto(photo);
 }
 
 function GetPrevPhotoIndex()
@@ -409,6 +447,11 @@ function GetNextPhotoIndex()
 
 function ShowPhoto(i)
 {
+  if (GetPhotoParam() == -1 && window.isMobile())
+  {
+    window.location = "gallery.html?zoom="+i;
+    return;
+  }
   var img = document.createElement("IMG");
   img.src = "images/" + lst_photos[i].name;
   img.className = "zoom hidden";
@@ -417,7 +460,7 @@ function ShowPhoto(i)
   var image = document.getElementsByClassName("image")[0];
   document.getElementsByClassName("slideshow")[0].style.display = "grid";
   image.appendChild(img);
-  document.getElementsByTagName("BODY")[0].style.overflow = "hidden";
+  document.getElementsByTagName("body")[0].style.overflow = "hidden";
   
   image.style.borderStyle = "none";
   img.addEventListener("load", function()
@@ -451,6 +494,7 @@ function RemoveSelectedPhoto()
     img_div.removeChild(child);
     child = img_div.lastElementChild;
   }
+  selected_photo = undefined;
 }
 
 function HidePhoto()

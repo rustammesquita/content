@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", InitPage);
 
 function InitPage()
 {
-  if (sessionStorage.getItem("from_home") == "true")
+  if (sessionStorage.getItem("from_home") == "true" && 
+      window.location.search.length == 0)
   {
     var navbar = document.getElementsByClassName("navbar")[0];
     var logo = document.getElementsByClassName("logo")[0];
