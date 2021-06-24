@@ -330,10 +330,12 @@ function InsertPhoto(i)
   
   var slideshow = document.getElementsByClassName("slideshow")[0];
   slideshow.ontouchstart = function myFunction(event) {
-    mouse_x_begin = event.touches[0].clientX;
+    if (event.touches.length == 1)
+      mouse_x_begin = event.touches[0].clientX;
   }
   slideshow.ontouchmove = function myFunction(event) {
-    mouse_x_end = event.touches[0].clientX;
+    if (event.touches.length == 1)
+      mouse_x_end = event.touches[0].clientX;
   }
   slideshow.ontouchend = function myFunction(event) {
     if (mouse_x_begin == undefined || mouse_x_end == undefined)
