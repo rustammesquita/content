@@ -276,6 +276,26 @@ document.onkeydown = function(evt) {
 };
 
 function InsertPhoto(i)
+{ 
+  var cards = document.getElementsByClassName("card");
+  if (cards[i] == undefined)
+  {
+    AllLoadedPhotosCB();
+    return;
+  }
+  
+  var divphoto = cards[i];
+  var img = divphoto.lastElementChild;
+  var photo = divphoto.photo;
+  img.src = "images/" + "min_" + photo.name;
+  img.loading = "lazy";
+  img.addEventListener("load", function()
+  {
+    InsertPhoto(i+1);
+  });
+}
+
+function CreatePhotoCard(i)
 {
   var photo = lst_photos[i];
   if (photo == undefined)
@@ -288,18 +308,11 @@ function InsertPhoto(i)
   var divphoto = document.createElement("DIV");
   divphoto.className = "card";
   divphoto.photo = photo;
-  img.src = "images/" + "min_" + photo.name;
   img.className = "photo";
-  // img.loading = "lazy";
   photo.index = i;
   photo.show = true;
   divphoto.appendChild(img);
   grid.appendChild(divphoto);
-  
-  img.addEventListener("load", function()
-  {
-    InsertPhoto(i+1);
-  });
   
   divphoto.onmouseover = function ()
   {
@@ -332,17 +345,21 @@ function InsertPhoto(i)
   slideshow.ontouchstart = function myFunction(event) {
     if (event.touches.length == 1)
       mouse_x_begin = event.touches[0].clientX;
+    else
+      mouse_x_begin = undefined;
   }
   slideshow.ontouchmove = function myFunction(event) {
     if (event.touches.length == 1)
       mouse_x_end = event.touches[0].clientX;
+    else
+      mouse_x_end = undefined;
   }
   slideshow.ontouchend = function myFunction(event) {
     if (mouse_x_begin == undefined || mouse_x_end == undefined)
       return;
-    if (mouse_x_begin - mouse_x_end > 0)
+    if (mouse_x_begin - mouse_x_end > 3)
       NextPhoto();
-    else if (mouse_x_begin - mouse_x_end < 0)
+    else if (mouse_x_begin - mouse_x_end < 3)
       PrevPhoto();
 
     mouse_x_begin = undefined;
@@ -372,6 +389,8 @@ function LoadPhotos()
   }
   lst_photos = lst_photos[5];
   
+  for (var i = 0; i < lst_photos.length; ++i)
+    CreatePhotoCard(i);
   // insert all photos recursively
   InsertPhoto(0);
   
@@ -388,15 +407,6 @@ function LoadPhotos()
 
 function AllLoadedPhotosCB()
 {
-  if (!window.isMobile())
-  {
-    var nextdiv = document.getElementsByClassName("next")[0];
-    var prevdiv = document.getElementsByClassName("prev")[0];
-    if (GetNextPhotoIndex() > selected_photo)
-      nextdiv.style.opacity = "100%";
-    if (GetPrevPhotoIndex() < selected_photo)
-      prevdiv.style.opacity = "100%";
-  }
 }
 
 function GetPhotoParam()
