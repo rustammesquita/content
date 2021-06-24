@@ -345,6 +345,8 @@ function CreatePhotoCard(i)
   
   var slideshow = document.getElementsByClassName("slideshow")[0];
   slideshow.ontouchstart = function myFunction(event) {
+    alert(org_width);
+    alert(window.innerWidth);
     if (event.touches.length == 1 && org_width == window.innerWidth)
       mouse_x_begin = event.touches[0].clientX;
     else
