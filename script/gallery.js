@@ -281,7 +281,7 @@ function InsertPhoto(i)
   var cards = document.getElementsByClassName("card");
   if (cards[i] == undefined)
   {
-    AllLoadedPhotosCB();
+    //AllLoadedPhotosCB();
     return;
   }
   
@@ -289,12 +289,12 @@ function InsertPhoto(i)
   var img = divphoto.lastElementChild;
   var photo = divphoto.photo;
   img.src = "images/" + "min_" + photo.name;
-  //img.loading = "lazy";
+  img.loading = "lazy";
   img.addEventListener("load", function()
   {
-    InsertPhoto(i+1);
+    divphoto.show();
+    // InsertPhoto(i+1);
   });
-  divphoto.show();
 }
 
 function CreatePhotoCard(i)
@@ -381,6 +381,8 @@ function CreatePhotoCard(i)
     if (hide)
       divphoto.hide();
   }
+  
+  InsertPhoto(i);
 }
 
 function LoadPhotos()
@@ -394,7 +396,8 @@ function LoadPhotos()
   for (var i = 0; i < lst_photos.length; ++i)
     CreatePhotoCard(i);
   // insert all photos recursively
-  InsertPhoto(0);
+  //InsertPhoto(0);
+  AllLoadedPhotosCB();
   
   var id = "All";
   var category = sessionStorage.getItem("category");
