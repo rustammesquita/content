@@ -126,3 +126,8 @@ function UpdatePageTexts()
     document.getElementById(lst_ids[i].id).innerHTML = lst_ids[i].func(lst_ids[i].id);
   }
 }
+
+function ResetGallery()
+{
+  sessionStorage.setItem("category", "All");
+}

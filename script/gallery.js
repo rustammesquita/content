@@ -1,12 +1,18 @@
+
+// Start loading photo grid when html is ready
 document.addEventListener("DOMContentLoaded", LoadPhotos);
+
+/**********************************************/
+/*            GLOBAL DEFINITIONS              */
+/**********************************************/
 var lst_photos = [[], [], [], [], [], []];
 var image_click = false;
 var change_photo = false;
 var selected_photo;
 var mouse_x_begin;
 var mouse_x_end;
-var org_width = window.innerWidth;
 
+// Fill the structure that contains the text content for a given html element id
 lst_ids = lst_ids.concat(
 [
   {
@@ -51,6 +57,8 @@ lst_ids = lst_ids.concat(
   },
 ]); 
 
+
+// Maps the categories ids to their titles
 var category_name = {
   "all": function ()
   {
@@ -114,6 +122,7 @@ var category_name = {
   },
 };
 
+// Defines Photo class
 class Photo{
   constructor(name)
   {
@@ -135,6 +144,328 @@ function AddPhoto (file_name)
   lst_photos[photo.rating].push(photo);
 }
 
+document.onkeydown = function(evt) {
+  evt = evt || window.event;
+  var isEscape = false;
+  if ("key" in evt) {
+    isEscape = (evt.key === "Escape" || evt.key === "Esc");
+  } else {
+    isEscape = (evt.keyCode === 27);
+  }
+  if (isEscape)
+    HidePhoto();
+};
+
+function InsertPhoto(i)
+{ 
+  var cards = document.getElementsByClassName("card");
+  if (cards[i] == undefined)
+    return;
+  
+  var divphoto = cards[i];
+  var img = divphoto.lastElementChild;
+  var photo = divphoto.photo;
+  img.src = "images/" + "min_" + photo.name;
+  img.addEventListener("load", function()
+  {
+    var category = sessionStorage.getItem("category");
+    if (category == "All")
+    {
+      divphoto.show();
+    }
+    else if (category != undefined)
+    {
+      var show = false;
+      Array.from(photo.categories, cat => {
+        if (cat.toLowerCase() == category.toLowerCase())
+          show = true;
+      });
+      if (show)
+        divphoto.show();
+    }
+  });
+}
+
+function CreatePhotoCard(i)
+{
+  var photo = lst_photos[i];
+  if (photo == undefined)
+    return;
+
+  var grid = document.getElementsByClassName("grid")[0];
+  var img = document.createElement("IMG");
+  var divphoto = document.createElement("DIV");
+  divphoto.className = "card hidden";
+  divphoto.photo = photo;
+  img.className = "photo";
+  photo.index = i;
+  photo.show = false;
+  divphoto.appendChild(img);
+  grid.appendChild(divphoto);
+  
+  divphoto.onmouseover = function ()
+  {
+    img.className += " selected";
+  }
+  divphoto.onmouseleave = function ()
+  {
+    RemoveClass(img, "selected");
+  }
+  divphoto.onmousedown = function (event)
+  {
+    if (event.which != 1)
+      return;
+      
+    RemoveClass(img, "selected");
+    ShowPhoto(photo.index);
+  }
+  divphoto.show = function ()
+  {
+    photo.show = true;
+    RemoveClass(divphoto, "hidden");
+  }
+  divphoto.hide = function ()
+  {
+    photo.show = false;
+    divphoto.className += " hidden";
+  }
+  
+  var slideshow = document.getElementsByClassName("slideshow")[0];
+  slideshow.ontouchstart = function myFunction(event) {
+    if (event.touches.length == 1)
+      mouse_x_begin = event.touches[0].clientX;
+    else
+      mouse_x_begin = undefined;
+  }
+  slideshow.ontouchmove = function myFunction(event) {
+    if (event.touches.length == 1)
+      mouse_x_end = event.touches[0].clientX;
+    else
+      mouse_x_end = undefined;
+  }
+  slideshow.ontouchend = function myFunction(event) {
+    if (mouse_x_begin == undefined || mouse_x_end == undefined)
+      return;
+    if (mouse_x_begin - mouse_x_end > 3)
+      NextPhoto();
+    else if (mouse_x_begin - mouse_x_end < 3)
+      PrevPhoto();
+
+    mouse_x_begin = undefined;
+    mouse_x_end = undefined;
+  }
+  
+  InsertPhoto(i);
+}
+
+function LoadPhotos()
+{
+  // Mark current category filter
+  var id = "All";
+  var category = sessionStorage.getItem("category");
+  if (category != undefined && category != "All")
+  {
+    id = category;
+  }
+  document.getElementById(id).className = "active";
+  
+  // order photos by rating
+  for (var k = 4; k >= 0; k--)
+    lst_photos[5] = lst_photos[5].concat(lst_photos[k]);
+  lst_photos = lst_photos[5];
+  
+  // Open photo slide if mobile and photo in session
+  OpenPhoto();
+  
+  // Add cards with photos to grid
+  for (var i = 0; i < lst_photos.length; ++i)
+  CreatePhotoCard(i);
+}
+
+function GetPhotoParam()
+{
+  var params = window.location.search;
+  var i = params.indexOf("zoom");
+  if (i > 0)
+  {
+    var photo = sessionStorage.getItem("selected_photo");
+    if (photo != undefined)
+      return Number(photo);
+  }
+  return -1;
+}
+
+function OpenPhoto()
+{
+  var photo = GetPhotoParam();
+  if (photo >= 0)
+    ShowPhoto(photo);
+}
+
+function GetPrevPhotoIndex()
+{
+  var i = 1;
+  while (lst_photos[selected_photo - i] != undefined)
+  {
+    var img = lst_photos[selected_photo - i];
+    if (img.show == true)
+      return selected_photo - i;
+      
+    i++;
+  }
+  return selected_photo;
+}
+
+function GetNextPhotoIndex()
+{
+  var i = 1;
+  while (lst_photos[selected_photo + i] != undefined)
+  {
+    var img = lst_photos[selected_photo + i];
+    if (img.show == true)
+      return selected_photo + i;
+      
+    i++;
+  }
+  return selected_photo;
+}
+
+function ShowPhoto(i)
+{
+  sessionStorage.setItem("selected_photo", i);
+  if (GetPhotoParam() == -1)// && window.isMobile())
+  {
+    window.location = "gallery.html?zoom";
+    return;
+  }
+  selected_photo = i;
+  var img = document.createElement("IMG");
+  img.src = "images/" + lst_photos[i].name;
+  img.className = "zoom hidden";
+  
+  var image = document.getElementsByClassName("image")[0];
+  document.getElementsByClassName("slideshow")[0].style.display = "grid";
+  image.appendChild(img);
+  document.getElementsByTagName("body")[0].style.overflow = "hidden";
+  
+  image.style.borderStyle = "none";
+  img.addEventListener("load", function()
+  {
+    img.className = "zoom";
+    image.style.borderStyle = "solid";
+    
+    if (!window.isMobile())
+    {
+      var nextdiv = document.getElementsByClassName("next")[0];
+      var prevdiv = document.getElementsByClassName("prev")[0];
+      if (GetNextPhotoIndex() > selected_photo)
+        nextdiv.style.opacity = "100%";
+      if (GetPrevPhotoIndex() < selected_photo)
+        prevdiv.style.opacity = "100%";
+    }
+  });
+}
+
+function RemoveSelectedPhoto()
+{
+  var nextdiv = document.getElementsByClassName("next")[0];
+  var prevdiv = document.getElementsByClassName("prev")[0];
+  nextdiv.style.opacity = "0%";
+  prevdiv.style.opacity = "0%";
+  
+  var img_div = document.getElementsByClassName("image")[0];
+  img_div.style.borderStyle = "none";
+  var child = img_div.lastElementChild; 
+  while (child) {
+    img_div.removeChild(child);
+    child = img_div.lastElementChild;
+  }
+  selected_photo = undefined;
+  sessionStorage.setItem("selected_photo", null)
+}
+
+function HidePhoto()
+{
+  if (image_click)
+  {
+    image_click = false;
+    return;
+  }
+  
+  if (change_photo)
+  {
+    change_photo = false;
+    return;
+  }
+    
+  document.getElementsByClassName("slideshow")[0].style.display = "none";
+  document.getElementsByTagName("BODY")[0].style.overflow = "auto";
+  RemoveSelectedPhoto();
+}
+
+function ImageClick()
+{
+  image_click = true;
+}
+
+function NextPhoto()
+{
+  change_photo = true;
+  var next_index = GetNextPhotoIndex();
+  if (next_index <= selected_photo)
+    return;
+  RemoveSelectedPhoto();
+  ShowPhoto(next_index);
+}
+
+function PrevPhoto()
+{
+  change_photo = true;
+  var prev_index = GetPrevPhotoIndex();
+  if (prev_index >= selected_photo)
+    return;
+  RemoveSelectedPhoto();
+  ShowPhoto(prev_index);
+}
+
+function ShowAll()
+{
+  sessionStorage.setItem("category", "All");
+  document.getElementsByClassName("active")[0].className = "inactive";
+  document.getElementById("All").className = "active";
+  Array.from(document.getElementsByClassName("card"), card => {
+    card.show();
+  });
+}
+
+function HideAll()
+{
+  Array.from(document.getElementsByClassName("card"), card => {
+    card.hide();
+  }); 
+}
+
+function ShowCategory(category)
+{
+  sessionStorage.setItem("category", category);
+  var currActive = document.getElementsByClassName("active")[0];
+  if (currActive != undefined)
+    currActive.className = "inactive";
+  document.getElementById(category).className = "active";
+  Array.from(document.getElementsByClassName("card"), card => {
+    Array.from(card.photo.categories, cat => {
+      if (cat.toLowerCase() == category.toLowerCase())
+        card.show();
+    });
+  });
+}
+
+function GetCategoryName (name)
+{
+  return category_name[name.toLowerCase()]();
+}
+
+// Adds the file paths to the list os images
 AddPhoto("20160729_063518-site, sky, Travel-2.jpg");
 AddPhoto("20161108_185603-Nature, rainbow, site-2.jpg");
 AddPhoto("20161115_233613-NightSky, site-2.jpg");
@@ -263,332 +594,3 @@ AddPhoto("20201017_112850-Comedy, site, wildlife-5.jpg");
 AddPhoto("20201017_171419-site, wildlife-5.jpg");
 AddPhoto("20201017_172147-site, wildlife-4.jpg");
 AddPhoto("20201017_172426-site, wildlife-5.jpg");
-
-document.onkeydown = function(evt) {
-  evt = evt || window.event;
-  var isEscape = false;
-  if ("key" in evt) {
-    isEscape = (evt.key === "Escape" || evt.key === "Esc");
-  } else {
-    isEscape = (evt.keyCode === 27);
-  }
-  if (isEscape)
-    HidePhoto();
-};
-
-function InsertPhoto(i)
-{ 
-  var cards = document.getElementsByClassName("card");
-  if (cards[i] == undefined)
-  {
-    //AllLoadedPhotosCB();
-    return;
-  }
-  
-  var divphoto = cards[i];
-  var img = divphoto.lastElementChild;
-  var photo = divphoto.photo;
-  img.src = "images/" + "min_" + photo.name;
-  // img.loading = "lazy";
-  img.addEventListener("load", function()
-  {
-    divphoto.show();
-    // InsertPhoto(i+1);
-  });
-}
-
-function CreatePhotoCard(i)
-{
-  var photo = lst_photos[i];
-  if (photo == undefined)
-  {
-    AllLoadedPhotosCB();
-    return;
-  }
-  var grid = document.getElementsByClassName("grid")[0];
-  var img = document.createElement("IMG");
-  var divphoto = document.createElement("DIV");
-  divphoto.className = "card hidden";
-  divphoto.photo = photo;
-  img.className = "photo";
-  photo.index = i;
-  photo.show = true;
-  divphoto.appendChild(img);
-  grid.appendChild(divphoto);
-  
-  divphoto.onmouseover = function ()
-  {
-    img.className += " selected";
-  }
-  divphoto.onmouseleave = function ()
-  {
-    RemoveClass(img, "selected");
-  }
-  divphoto.onmousedown = function (event)
-  {
-    if (event.which != 1)
-      return;
-      
-    RemoveClass(img, "selected");
-    ShowPhoto(photo.index);
-  }
-  divphoto.show = function ()
-  {
-    photo.show = true;
-    RemoveClass(divphoto, "hidden");
-  }
-  divphoto.hide = function ()
-  {
-    photo.show = false;
-    divphoto.className += " hidden";
-  }
-  
-  var slideshow = document.getElementsByClassName("slideshow")[0];
-  slideshow.ontouchstart = function myFunction(event) {
-    if (event.touches.length == 1)
-      mouse_x_begin = event.touches[0].clientX;
-    else
-      mouse_x_begin = undefined;
-  }
-  slideshow.ontouchmove = function myFunction(event) {
-    if (event.touches.length == 1)
-      mouse_x_end = event.touches[0].clientX;
-    else
-      mouse_x_end = undefined;
-  }
-  slideshow.ontouchend = function myFunction(event) {
-    if (mouse_x_begin == undefined || mouse_x_end == undefined)
-      return;
-    if (mouse_x_begin - mouse_x_end > 3)
-      NextPhoto();
-    else if (mouse_x_begin - mouse_x_end < 3)
-      PrevPhoto();
-
-    mouse_x_begin = undefined;
-    mouse_x_end = undefined;
-  }
-  
-  var category = sessionStorage.getItem("category");
-  if (category != undefined && category != "All")
-  {
-    var hide = true;
-    Array.from(photo.categories, cat => {
-      if (cat.toLowerCase() == category.toLowerCase())
-      {
-        hide = false;
-      }
-    });
-    if (hide)
-      divphoto.hide();
-  }
-  
-  InsertPhoto(i);
-}
-
-function LoadPhotos()
-{
-  for (var k = 4; k >= 0; k--)
-  {
-    lst_photos[5] = lst_photos[5].concat(lst_photos[k]);
-  }
-  lst_photos = lst_photos[5];
-  
-  for (var i = 0; i < lst_photos.length; ++i)
-    CreatePhotoCard(i);
-  // insert all photos recursively
-  //InsertPhoto(0);
-  AllLoadedPhotosCB();
-  
-  var id = "All";
-  var category = sessionStorage.getItem("category");
-  if (category != undefined && category != "All")
-  {
-    id = category;
-  }
-  document.getElementById(id).className = "active";
-  
-  OpenPhoto();
-}
-
-function AllLoadedPhotosCB()
-{
-}
-
-function GetPhotoParam()
-{
-  var params = window.location.search;
-  var i = params.indexOf("zoom=");
-  if (i > 0)
-  {
-    var photo = params.substring(i+5, params.length);
-    if (photo != undefined)
-      return Number(photo);
-  }
-  return -1;
-}
-
-function OpenPhoto()
-{
-  var photo = GetPhotoParam();
-  if (photo >= 0)
-    ShowPhoto(photo);
-}
-
-function GetPrevPhotoIndex()
-{
-  var i = 1;
-  while (lst_photos[selected_photo - i] != undefined)
-  {
-    var img = lst_photos[selected_photo - i];
-    if (img.show == true)
-      return selected_photo - i;
-      
-    i++;
-  }
-  return selected_photo;
-}
-
-function GetNextPhotoIndex()
-{
-  var i = 1;
-  while (lst_photos[selected_photo + i] != undefined)
-  {
-    var img = lst_photos[selected_photo + i];
-    if (img.show == true)
-      return selected_photo + i;
-      
-    i++;
-  }
-  return selected_photo;
-}
-
-function ShowPhoto(i)
-{
-  if (GetPhotoParam() == -1 && window.isMobile())
-  {
-    window.location = "gallery.html?zoom="+i;
-    return;
-  }
-  var img = document.createElement("IMG");
-  img.src = "images/" + lst_photos[i].name;
-  img.className = "zoom hidden";
-  selected_photo = i;
-  
-  var image = document.getElementsByClassName("image")[0];
-  document.getElementsByClassName("slideshow")[0].style.display = "grid";
-  image.appendChild(img);
-  document.getElementsByTagName("body")[0].style.overflow = "hidden";
-  
-  image.style.borderStyle = "none";
-  img.addEventListener("load", function()
-  {
-    img.className = "zoom";
-    image.style.borderStyle = "solid";
-    
-    if (!window.isMobile())
-    {
-      var nextdiv = document.getElementsByClassName("next")[0];
-      var prevdiv = document.getElementsByClassName("prev")[0];
-      if (GetNextPhotoIndex() > selected_photo)
-        nextdiv.style.opacity = "100%";
-      if (GetPrevPhotoIndex() < selected_photo)
-        prevdiv.style.opacity = "100%";
-    }
-  });
-}
-
-function RemoveSelectedPhoto()
-{
-  var nextdiv = document.getElementsByClassName("next")[0];
-  var prevdiv = document.getElementsByClassName("prev")[0];
-  nextdiv.style.opacity = "0%";
-  prevdiv.style.opacity = "0%";
-  
-  var img_div = document.getElementsByClassName("image")[0];
-  img_div.style.borderStyle = "none";
-  var child = img_div.lastElementChild; 
-  while (child) {
-    img_div.removeChild(child);
-    child = img_div.lastElementChild;
-  }
-  selected_photo = undefined;
-}
-
-function HidePhoto()
-{
-  if (image_click)
-  {
-    image_click = false;
-    return;
-  }
-  
-  if (change_photo)
-  {
-    change_photo = false;
-    return;
-  }
-    
-  document.getElementsByClassName("slideshow")[0].style.display = "none";
-  document.getElementsByTagName("BODY")[0].style.overflow = "auto";
-  RemoveSelectedPhoto();
-}
-
-function ImageClick()
-{
-  image_click = true;
-}
-
-function NextPhoto()
-{
-  change_photo = true;
-  var next_index = GetNextPhotoIndex();
-  if (next_index <= selected_photo)
-    return;
-  RemoveSelectedPhoto();
-  ShowPhoto(next_index);
-}
-
-function PrevPhoto()
-{
-  change_photo = true;
-  var prev_index = GetPrevPhotoIndex();
-  if (prev_index >= selected_photo)
-    return;
-  RemoveSelectedPhoto();
-  ShowPhoto(prev_index);
-}
-
-function ShowAll()
-{
-  sessionStorage.setItem("category", "All");
-  document.getElementsByClassName("active")[0].className = "inactive";
-  document.getElementById("All").className = "active";
-  Array.from(document.getElementsByClassName("card"), card => {
-    card.show();
-  });
-}
-
-function HideAll()
-{
-  Array.from(document.getElementsByClassName("card"), card => {
-    card.hide();
-  }); 
-}
-
-function ShowCategory(category)
-{
-  sessionStorage.setItem("category", category);
-  document.getElementsByClassName("active")[0].className = "inactive";
-  document.getElementById(category).className = "active";
-  Array.from(document.getElementsByClassName("card"), card => {
-    Array.from(card.photo.categories, cat => {
-      if (cat.toLowerCase() == category.toLowerCase())
-        card.show();
-    });
-  });
-}
-
-function GetCategoryName (name)
-{
-  return category_name[name.toLowerCase()]();
-}

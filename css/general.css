@@ -1,7 +1,7 @@
 :root {
   --bt_size: 2.5rem;
   --highlight-color: white;
-  --passive-color: rgb(200, 200, 200);
+  --passive-color: #efecff;
   --contrast-color: rgb(75, 75, 75);
   --shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.5);
 }
