@@ -333,7 +333,7 @@ function GetNextPhotoIndex()
 function ShowPhoto(i)
 {
   sessionStorage.setItem("selected_photo", i);
-  if (GetPhotoParam() == -1)// && window.isMobile())
+  if (GetPhotoParam() == -1 && window.isMobile())
   {
     window.location = "gallery.html?zoom";
     return;
