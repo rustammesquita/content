@@ -36,6 +36,26 @@ window.isMobile = function() {
   return check;
 };
 
+document.addEventListener("DOMContentLoaded", ChangePageSizes);
+
+function ChangePageSizes ()
+{
+  if (window.isMobile())
+  {
+    var html = document.getElementsByTagName("html")[0];
+    html.style.fontSize = "80%";
+    
+    var grid = document.getElementsByClassName("grid")[0];
+    if (grid != undefined)
+    {
+      grid.style.padding = "3px";
+      grid.style.gridGap = "7px";
+    }
+    var bt = document.getElementsByClassName("langicos")[0];
+    if (bt != undefined)
+      bt.style.bottom = "0.25rem";
+  }
+}
 
 function RemoveClass (elem, classname)
 {

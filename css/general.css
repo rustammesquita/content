@@ -1,5 +1,5 @@
 :root {
-  --bt_size: 2.5rem;
+  --bt_size: 2.5em;
   --highlight-color: white;
   --passive-color: #efecff;
   --contrast-color: rgb(75, 75, 75);
@@ -29,8 +29,8 @@ html{
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding-bottom: 3.5rem;
-  padding-top: 0.5rem;
-  margin-top: 1rem;
+  padding-bottom: 3.5em;
+  padding-top: 0.5em;
+  margin-top: 1em;
   border-top: 1px solid var(--contrast-color);
 }

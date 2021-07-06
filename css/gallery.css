@@ -80,24 +80,24 @@
   font-family: 'Cinzel', serif;
   text-align: center;
   text-decoration: underline;
-  padding-top: 5rem;
+  padding-top: 5em;
 }
 
 .filters {
-  padding-top: 3rem;
-  padding-bottom: 1rem;
+  padding-top: 3em;
+  padding-bottom: 1em;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   grid-template-columns: repeat(9, max-content);
   place-content: center;
-  gap: 1rem;
+  gap: 1em;
 }
 
 button{
   position: relative;
   background-color: var(--passive-color);
-  font-size: 12pt;
+  font-size: 1rem;
   border: none;
   cursor: pointer;
 }
@@ -131,11 +131,11 @@ button.active:hover::after {
 
 .grid{
   display: grid;
-  padding: 1.5rem;
-  grid-gap: 1.5rem;
+  padding: 1em;
+  grid-gap: 1em;
   grid-template-columns: repeat(3, minmax(100px, 300px));
   /* grid-template-rows: repeat(200, minmax(66px, 200px)); */
-  padding-bottom: 4rem;
+  padding-bottom: 4em;
 }
 
 .card{
@@ -144,7 +144,7 @@ button.active:hover::after {
   display: grid;
   grid-template-rows: none;
   place-items: center;
-  box-shadow: var(--shadow);
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7);
 }
 
 .selected{

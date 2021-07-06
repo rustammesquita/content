@@ -258,7 +258,7 @@ function CreatePhotoCard(i)
   InsertPhoto(i);
 }
 
-function LoadPhotos()
+function LoadPhotos ()
 {
   // Mark current category filter
   var id = "All";
