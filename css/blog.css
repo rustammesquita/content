@@ -1,0 +1,7 @@
+.content{
+  position: absolute;
+  inset: 0;
+  margin: 10rem;
+  height: auto;
+  width: auto;
+}
