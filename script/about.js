@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-function GetProfile()
+function GetProfile ()
 {
   // if (sessionStorage.getItem("lang") == pt_lang)
   {

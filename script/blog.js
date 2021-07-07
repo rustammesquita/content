@@ -6,7 +6,7 @@ lst_ids = lst_ids.concat(
   },
 ]);
 
-function GetBlogMsg()
+function GetBlogMsg ()
 {
   if (sessionStorage.getItem("lang") == pt_lang)
   {

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", InitPage);
 
-function InitPage()
+function InitPage ()
 {
   if (sessionStorage.getItem("from_home") == "true" && 
       window.location.search.length == 0)
