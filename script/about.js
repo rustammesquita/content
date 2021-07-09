@@ -13,10 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
     profile.style.textAlign = "left";
     
     var photo = document.getElementsByClassName("photo")[0];
-    photo.style.display = "none";
     
     var content = document.getElementsByClassName("content")[0];
     content.style.display = "block";
+    
+    content.removeChild(photo);
+    photo.style.position = "relative";
+    photo.style.width = "auto";
+    photo.style.paddingRight = "1em";
+    profile.appendChild(photo);
   }
 });
 
