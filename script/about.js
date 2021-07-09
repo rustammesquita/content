@@ -27,36 +27,38 @@ function GetProfile ()
     return `
       <div class="section"><div class="sectionbegin"></div>
       <p>
-      Ao longo da minha vida eu fui colecionando alguns hobbies, mas \&eacute; curioso pensar como alguns deles j\&aacute; existiam em mim desde crian\&ccedil;a... Essa \&eacute; a hist\&oacute;ria que eu vou contar, pois ela diz muito sobre quem eu sou.
+      A história de como eu me apaixonei pela fotografia não é surpreendente ou emocionante, ela é apenas curiosa. Acho incrível como ela surgiu a partir de um fascínio quando ainda criança. Mas eu sinto que para contar essa história, devo falar também sobre como surgiram meus outros hobbies. Pois com eles eu aprendi a me dedicar e desenvolver meus interesses.
       </p>
       </div>
       <div class="section"><div class="sectionbegin"></div>
       <p>
-      Eu tive a sorte de ter aula de inicia\&ccedil;\&atilde;o musical no col\&eacute;gio, com 8 anos de idade. Era divertido demais! N\&atilde;o parecia aula para mim. Era divers\&atilde;o! E quando a aula de m\&uacute;sica deixou de ser obrigat\&oacute;ria, comecei a fazer aula particular de teclado e me inscrevi para fazer parte da banda do col\&eacute;gio. Foi assim que aprendi a tocar saxofone, aos 11 anos. Com 15, comecei a tocar na igreja e pouco tempo depois eu j\&aacute; estava tocando em casamentos.
+      Eu tive a sorte de ter aula de iniciação musical no colégio, aos 8 anos de idade. Eu amva! Era divertidíssimo. Quando completei 11, ganhei de aniversário um teclado. Eu nunca havia tocado em um teclado ou piano antes, mas no manual havia indicação das notas. Para mim, aquilo foi suficiente. Em minutos eu estava tocando o tema do filme Titanic (minha música preferida, na época). Ai não teve jeito, meus pais tiveram que me por em uma aula particular.
       </p><p>
-      Hoje o meu contato com a m\&uacute;sica \&eacute; menor, mas indiscutivelmente, ela foi a minha primeira paix\&atilde;o e eu sigo sendo um m\&uacute;sico apaixonado.
+      No mesmo ano eu me inscrevi para fazer parte da banda do colégio e fui aceito. Escolhi o saxofone como instrumento, inspirado no gosto musical dos meus pais que adoravam Kenny G. Daí em diante, eu passei a ter contato com diversos instrumentos e músicos. Comecei a tocar na igreja e depois em cerimônias de casamento. Quando entrei pra faculdade, o tempo para estudar música foi diminuindo. Mas certo dia, descobri que faculdade havia uma sala musical com violões disponíveis para os alunos pegarem emprestado. Então eu aprendi a tocar violão nos pequenos intervalos entre as aulas.
+      </p><p>
+      Hoje o meu contato com a música é menor, mas indiscutivelmente, ela foi a minha primeira paixão e eu sigo sendo um músico apaixonado.
       </p>
       </div>
       <div class="section"><div class="sectionbegin"></div>
       <p>
-      Mas n\&atilde;o era s\&oacute; a m\&uacute;sica que me fazia viajar. Outra coisa que me fascinava desde pequeno, eram fotos da natureza e de animais selvagens. Eu perdia horas no computador buscando imagens para usar como papel de parede. Eram fotos do p\&ocirc;r do sol, de neve, da lua, do oceano, de animais selvagens e por ai vai. N\&atilde;o tinha fim!
+      Mas nem todas as minhas aptidões foram iniciadas ainda pequeno. Quando perdi meu bisavô na adolescência, eu tive o impulso de externar minha tristeza em um pequeno texto. Era uma forma de homenageá-lo com palavras bonitas e ao mesmo tempo materializar aquela dor fora do meu corpo. E foi bom. Escrever aquele texto me trouxe uma anestesia. Ainda que rápida, eu logo percebi que poderia renovar a sensação de anestesia ao reler o texto.
       </p><p>
-      Das fotos que eu amava ver, o nascer do sol era a mais f\&aacute;cil de reproduzir. N\&atilde;o exigia viajar para um lugar com neve e nem para o meio da savana. Ent\&atilde;o, foi o que eu tentei fazer... por anos! E apesar de ter tentado todas as configura\&ccedil;\&otilde;es poss\&iacute;veis que a Cybershot oferecia, nenhuma foto nunca saiu semelhante \&agrave;quelas que eu tanto gostava de ver na internet. A verdade \&eacute; que eu n\&atilde;o sabia nada de fotografia. Eu aprendi a usar a c\&acirc;mera da melhor forma poss\&iacute;vel, mas n\&atilde;o conseguia entender o porqu\&ecirc; da foto n\&atilde;o sair como eu esperava.
-      </p><p>
-      Certo dia, cansada das fotos de fam\&iacute;lia terr\&iacute;veis, minha m\&atilde;e pediu para que eu pesquisasse uma c\&acirc;mera que tirasse "boas fotos". Restando alguns meses para concluir a faculdade e com senso cr\&iacute;tico bem mais maduro, eu me debrucei sobre a internet em busca de tal c\&acirc;mera e me perdi no mundo fotogr\&aacute;fico. De l\&aacute; para c\&aacute;, foram in\&uacute;meras pesquisas sobre o funcionamento de uma c\&acirc;mera e muitos v\&iacute;deos do youtube assistidos, para que eu finalmente pudesse olhar para as minhas fotos e ficar fascinado como eu ficava quando crian\&ccedil;a.
+      Alguns anos se passaram e quando eu tive a minha primeira desilusão amorosa, imediatamente comecei a escrever. Inicialmente eu escrevia só para mim, num bloco de notas. Mas certo dia, ao ler alguns dos meus textos, um amigo insistiu para que eu criasse um blog. Foi assim que surgiu o "Sem Dúvidas, Sem Certezas", um blog com textos românticos e reflexões sobre a vida. Atualmente inativo, o blog rendeu mais de 100 textos e alguns leitores fiéis. Apesar de seu fechamento em 2017, nunca deixei de ter carinho pelos textos que escrevi.
       </p>
       </div>
       <div class="section"><div class="sectionbegin"></div>
       <p>
-      Mas nem todas as minhas aptid\&otilde;es foram premeditadas. Quando perdi meu bisav\&ocirc; na adolesc\&ecirc;ncia, eu tive o impulso de externar minha tristeza em um pequeno texto. Era uma forma de homenage\&aacute;-lo com palavras bonitas e ao mesmo tempo materializar aquela dor fora do meu corpo. E foi bom. Escrever aquele texto me trouxe uma anestesia. Ainda que r\&aacute;pida, eu logo percebi que poderia renovar a sensa\&ccedil;\&atilde;o de anestesia ao reler o texto.
+      Contudo, durante meu envolvimento com a música e a escrita, um elemento sempre esteve presente: as fotos.
+      Eu perdia horas no computador buscando imagens para usar como papel de parede. Eram fotos do pôr do sol, de neve, da lua, do oceano, de animais selvagens e por ai vai. Não tinha fim! Eu ficava hipnotizado com fotos bonitas, com os detalhes. Eu queria sempre mais! Queria conhecer aqueles lugares. Tirar aquelas fotos.
       </p><p>
-      Alguns anos se passaram e quando eu tive a minha primeira desilus\&atilde;o amorosa, imediatamente comecei a escrever. Inicialmente eu escrevia s\&oacute; para mim, num bloco de notas. Mas certo dia, ao ler alguns dos meus textos, um amigo insistiu para que eu criasse um blog. Foi assim que surgiu o "Sem D\&uacute;vidas, Sem Certezas", um blog com textos rom\&acirc;nticos e reflex\&otilde;es sobre a vida. Atualmente inativo, o blog rendeu mais de 100 textos e alguns leitores fi\&eacute;is. Apesar de seu fechamento em 2017, nunca deixei de ter carinho pelos textos que escrevi.
+      Das fotos que eu amava ver, o nascer do sol era a mais fácil de reproduzir. Não exigia viajar para um lugar com neve e nem para o meio da savana. Então, foi o que eu tentei fazer... por anos! E apesar de ter tentado todas as configurações possíveis que a Cybershot oferecia, nenhuma foto nunca saiu semelhante àquelas que eu tanto gostava de ver na internet. A verdade é que eu não sabia nada de fotografia. Eu aprendi a usar a câmera da melhor forma possível, mas não conseguia entender o porquê da foto não sair como eu esperava.
+      </p><p>
+      Certo dia, cansada das fotos de família terríveis, minha mãe pediu para que eu pesquisasse uma câmera que tirasse "boas fotos". Restando alguns meses para concluir a faculdade e com senso crítico bem mais maduro, eu me debrucei sobre a internet em busca de tal câmera e me perdi no mundo fotográfico. De lá para cá, foram inúmeras pesquisas sobre o funcionamento de uma câmera, sobre como uma foto é formada e muita mão na massa. Ainda tenho um longuíssimo caminho a percorrer, mas hoje eu posso finalmente olhar para as minhas fotos e ficar fascinado como eu ficava quando criança.
       </p>
       </div>
       <div class="section"><div class="sectionbegin"></div>
       <p>
-      Hoje, saudoso por um blog desativado e com fotos se acumulando no instagram, tomei a decis\&atilde;o de criar um site pessoal. O objetivo principal \&eacute; reunir minhas produ\&ccedil;\&otilde;es art\&iacute;sticas e manter registro para a posterioridade. Mas anseio pelas conex\&otilde;es que o site pode me trazer, al\&eacute;m do engajamento e feedback de pessoas apaixonadas pelos mesmos hobbies que eu.
-      Sem mais, sejam bem-vindos! Espero que a visita seja prazerosa.
+      Hoje, saudoso por um blog desativado e com fotos se acumulando no instagram, tomei a decisão de criar um site pessoal. O objetivo principal é reunir minhas produções artísticas e manter registro para a posterioridade. Mas anseio pelas conexões que o site pode me trazer, além do engajamento e feedback de pessoas apaixonadas pelos mesmos hobbies que eu. Sem mais, sejam bem-vindos! Espero que a visita seja prazerosa.
       </p>
       </div>
     `;
