@@ -10,5 +10,4 @@
   $headers .= "Reply-To: $email \r\n";
   
   mail($to, $subject, $msg, $headers);
-  header("Location: index.html");
 ?>
