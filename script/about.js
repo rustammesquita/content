@@ -78,37 +78,37 @@ function GetProfile ()
       </div>
       <div class="section"><div class="sectionbegin"></div>
       <p>      
-      I was lucky enough to have an introduction to music class at school when I was 8. I used to love it! I had so much fun. When I turned 11, I got the keyboards as a birthday gift from my parents. I had never played the keyboards before, but the notes chart was enough to get me started. In a matter of minutes I was playing the titanic theme song (my favorite song at the time). After that my parents put me in a piano class.
+      I was lucky enough to have an introduction to music class at school when I was 8. I used to love it! I had so much fun. When I turned 11, I got the keyboards as a birthday gift from my parents. I had never played the keyboards before, but the notes chart was enough to get me started. In a matter of minutes I was playing the titanic theme song (my favourite song at the time). After that, my parents put me in a piano class.
       </p>
       <p>      
-      In the same year I applied to be part of the high school band and was accepted. I chose the saxophone as an instrument, inspired by the musical taste of my parents who adored Kenny G. From then on, I started to have contact with several instruments and musicians. I started playing at church and then at wedding ceremonies. When I entered college, the time to study music was decreasing. But one day, I found out that college had a music room with guitars available for students to borrow. So I learned to play the guitar in the short breaks between classes.
+      In the same year, I applied to be part of the school band and was accepted. I chose to learn how to play the saxophone, inspired by the musical taste of my parents who adored Kenny G. In the band, I stood in touch with several musicians and had the opportunity to play many instruments. Thereafter, I started playing at church and then at wedding ceremonies. When I entered college, the time to study music started to decrease. But one day, I found out that the college had a music room with acoustic guitars available for students to borrow. So I learned to play the guitar in the short breaks between classes.
       </p>
       <p>
-      Today my contact with music is less, but indisputably, it was my first passion and I continue to be a passionate musician.
-      </p>
-      </div>
-      <div class="section"><div class="sectionbegin"></div>
-      <p>
-      But not all my skills were started when I was little. When I lost my great-grandfather in adolescence, I had the impulse to express my sadness in a small text. It was a way to honor him with beautiful words and at the same time materialize that pain outside my body. And it was good. Writing that text gave me an anesthesia, albeit a quick one. I soon realized that this feeling of anesthesia was renewed every time I reread the text.
-      </p>
-      <p>
-      A few years passed and when I had my first heartbreak, I immediately started writing. Initially I wrote just for myself, in a notebook. But one day, while reading some of my texts, a friend urged me to create a blog. That's how "Sem Dúvidas, Sem Certezas" was created, a blog with romantic texts and reflections on life. Currently inactive, the blog has yielded more than 100 texts and some loyal readers. Despite its closing in 2017, I never stopped being fond of the texts I wrote.
+      Today I have less contact with music, I just play now and then, but the music was my first passion and I continue to be in love with it.
       </p>
       </div>
       <div class="section"><div class="sectionbegin"></div>
       <p>
-      However, during my involvement with music and writing, one element was always present: the photos. I wasted hours on the computer looking for images to use as wallpaper. There were pictures of the sunset, snow, the moon, the ocean, wild animals and so on. There was no end! I was mesmerized by the beautiful photos, with the details. I always wanted more! I wanted to see those places. Take those pictures.
+      Not all my skills started when I was little. When I lost my great-grandfather in adolescence, I had the impulse to express my sadness in a small text. It was a way to honour him with beautiful words and at the same time materialize that pain outside my body. And it was good. Writing that text briefly softened the feelings. I soon realized that reading it again would keep that sensation.
       </p>
       <p>
-      Of the photos I loved to see, sunrise was the easiest to reproduce. It didn't require traveling to a snowy place or into the middle of the savanna. So that's what I tried to do... for years! And despite having tried every possible configuration that Cybershot offered, no photo has ever come out similar to the ones I so loved to see on the internet. The truth is, I didn't know anything about photography. I learned to use the camera as best I could, but I couldn't understand why the photo didn't turn out as I expected.
-      </p>
-      <p>
-      One day, tired of the terrible family photos, my mother asked me to research a camera that would take "good pictures". With a few months left to finish college and with a much more mature critical sense, I bent over the internet in search of such a camera and got lost in the photographic world. Since then, there have been countless researches about how a camera works, about how a photo is formed and a lot of hands-on work. I still have a very long way to go, but today I can finally look at my photos and be fascinated by how I was as a child.
+      A few years passed and when I had my first heartbreak, I immediately started writing. Initially, I wrote just for myself. But one day, while reading some of my texts, a friend urged me to create a blog. That's how "Sem Dúvidas, Sem Certezas" was created. A blog with romantic texts and reflections on life. Currently inactive, the blog has yielded more than 100 texts and some loyal readers. Despite its closing in 2017, I never stopped being fond of the texts I wrote.
       </p>
       </div>
       <div class="section"><div class="sectionbegin"></div>
       <p>
-      Today, homesick for a deactivated blog and with photos piling up on instagram, I made the decision to create a personal website. The main objective is to gather my artistic productions and keep a record for later, but I look forward to the connections that the site can bring me, in addition to the engagement and feedback of people passionate about the same hobbies as me. Without further ado, welcome! I hope the visit is pleasant.
+      However, while I dedicated my time to music and writing, one element was always present: the photos. I wasted hours on the computer looking for images to use as wallpaper. There were pictures of sunsets, snow, the moon, the ocean, wild animals and so on. It was endless! I got mesmerized by the detailed beautiful pictures. I always wanted more! I wanted to see those places. Take those pictures.
+      </p>
+      <p>
+      Among all the kinds of photos I loved to see, a sunrise picture was the easiest one to reproduce. It didn't require me to travel to a snowy place or into the middle of the savanna. So that's what I tried to do... for years! And despite having tried every possible configuration that Cybershot offered, no photo has ever come out similar to the ones I so loved to see on the internet. The truth was I didn't know anything about photography. I had learned to use the camera as best I could, but I couldn't understand why the photo didn't turn out as I hope to be.
+      </p>
+      <p>
+      One day, tired of the terrible family photographs, my mother asked me to research a camera that would take "good pictures". With a few months left to finish college and with much more critical thinking, I looked over the internet in search of such a camera and got lost in the photographic world. Since then, there have been countless researches about how a camera works, about how a photo is formed and a lot of pictures taken. I still have a very long way to go, but today I can finally look at my photos and be fascinated by them as I used to be as a child.
+      </p>
+      </div>
+      <div class="section"><div class="sectionbegin"></div>
+      <p>
+      Today, missing the times of writing in a blog and with photos piling up on instagram, I made the decision to create this personal website. The main purpose of it is to gather my artistic productions and keep a record for later, but I also look forward to the feedback of people passionate about the same things I am. Without any further ado, welcome! I hope the visit is pleasant.
       </p>
       </div>
     `;
