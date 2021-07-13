@@ -71,38 +71,46 @@ function GetProfile ()
   else
   {
     return `
+      <div class="section"><div class="sectionbegin"></div>
+      <p>
       The story of how I fell in love with photography it's not that exciting, it's just curious. I find it amazing how it all started with a child's fascination. But I can't tell this story without telling you about my other hobbies, since they taught me how to dedicate myself and how to develop my interests. 
-
-      
-      I was lucky enough to have an introduction to music class at school when I was 8. I used to love it! I had so much fun. When I turned 11, I got the keyboards as a birthday gift from my parents. I had never played the keyboards before, but the notes chart was enough to get me started. In a matter of minutes I was playing the titanic theme song (my favorite song at the time). After that my parents put me in a piano class. 
-      
-      In the same year I signed up to be part of the school band and they accepted me. I chose to play the saxophone inspired by my parents' musical taste, who listened to Kenny G a lot. Thereafter, my parents found me a private teacher.
-      
-      
-      
-      
-      
-      
-      
-      The story of how I fell in love with photography isn't surprising or exciting, it's just curious. I think it's amazing how it came out of fascination as a child. But I feel that to tell this story, I must also talk about how my other hobbies came about, because with them I learned to dedicate myself and develop my interests.
-
-I was lucky to have an initiation music class in high school when I was 8 years old. I loved! It was so much fun. When I turned 11, I got a keyboard for my birthday. I had never played on a keyboard or piano before, but in the manual there was an indication of the notes. For me, that was enough. Within minutes I was playing the theme from the movie Titanic (my favorite song at the time). There was no way, my parents had to put me in a private lesson.
-
-In the same year I applied to be part of the high school band and was accepted. I chose the saxophone as an instrument, inspired by the musical taste of my parents who adored Kenny G. From then on, I started to have contact with several instruments and musicians. I started playing at church and then at wedding ceremonies. When I entered college, the time to study music was decreasing. But one day, I found out that college had a music room with guitars available for students to borrow. So I learned to play the guitar in the short breaks between classes.
-
-Today my contact with music is less, but indisputably, it was my first passion and I continue to be a passionate musician.
-
-But not all my skills were started when I was little. When I lost my great-grandfather in adolescence, I had the impulse to express my sadness in a small text. It was a way to honor him with beautiful words and at the same time materialize that pain outside my body. And it was good. Writing that text gave me an anesthesia, albeit a quick one. I soon realized that this feeling of anesthesia was renewed every time I reread the text.
-
-A few years passed and when I had my first heartbreak, I immediately started writing. Initially I wrote just for myself, in a notebook. But one day, while reading some of my texts, a friend urged me to create a blog. That's how "Sem Dúvidas, Sem Certezas" was created, a blog with romantic texts and reflections on life. Currently inactive, the blog has yielded more than 100 texts and some loyal readers. Despite its closing in 2017, I never stopped being fond of the texts I wrote.
-
-However, during my involvement with music and writing, one element was always present: the photos. I wasted hours on the computer looking for images to use as wallpaper. There were pictures of the sunset, snow, the moon, the ocean, wild animals and so on. There was no end! I was mesmerized by the beautiful photos, with the details. I always wanted more! I wanted to see those places. Take those pictures.
-
-Of the photos I loved to see, sunrise was the easiest to reproduce. It didn't require traveling to a snowy place or into the middle of the savanna. So that's what I tried to do... for years! And despite having tried every possible configuration that Cybershot offered, no photo has ever come out similar to the ones I so loved to see on the internet. The truth is, I didn't know anything about photography. I learned to use the camera as best I could, but I couldn't understand why the photo didn't turn out as I expected.
-
-One day, tired of the terrible family photos, my mother asked me to research a camera that would take "good pictures". With a few months left to finish college and with a much more mature critical sense, I bent over the internet in search of such a camera and got lost in the photographic world. Since then, there have been countless researches about how a camera works, about how a photo is formed and a lot of hands-on work. I still have a very long way to go, but today I can finally look at my photos and be fascinated by how I was as a child.
-
-Today, homesick for a deactivated blog and with photos piling up on instagram, I made the decision to create a personal website. The main objective is to gather my artistic productions and keep a record for later, but I look forward to the connections that the site can bring me, in addition to the engagement and feedback of people passionate about the same hobbies as me. Without further ado, welcome! I hope the visit is pleasant.
+      </p>
+      </div>
+      <div class="section"><div class="sectionbegin"></div>
+      <p>      
+      I was lucky enough to have an introduction to music class at school when I was 8. I used to love it! I had so much fun. When I turned 11, I got the keyboards as a birthday gift from my parents. I had never played the keyboards before, but the notes chart was enough to get me started. In a matter of minutes I was playing the titanic theme song (my favorite song at the time). After that my parents put me in a piano class.
+      </p>
+      <p>      
+      In the same year I applied to be part of the high school band and was accepted. I chose the saxophone as an instrument, inspired by the musical taste of my parents who adored Kenny G. From then on, I started to have contact with several instruments and musicians. I started playing at church and then at wedding ceremonies. When I entered college, the time to study music was decreasing. But one day, I found out that college had a music room with guitars available for students to borrow. So I learned to play the guitar in the short breaks between classes.
+      </p>
+      <p>
+      Today my contact with music is less, but indisputably, it was my first passion and I continue to be a passionate musician.
+      </p>
+      </div>
+      <div class="section"><div class="sectionbegin"></div>
+      <p>
+      But not all my skills were started when I was little. When I lost my great-grandfather in adolescence, I had the impulse to express my sadness in a small text. It was a way to honor him with beautiful words and at the same time materialize that pain outside my body. And it was good. Writing that text gave me an anesthesia, albeit a quick one. I soon realized that this feeling of anesthesia was renewed every time I reread the text.
+      </p>
+      <p>
+      A few years passed and when I had my first heartbreak, I immediately started writing. Initially I wrote just for myself, in a notebook. But one day, while reading some of my texts, a friend urged me to create a blog. That's how "Sem Dúvidas, Sem Certezas" was created, a blog with romantic texts and reflections on life. Currently inactive, the blog has yielded more than 100 texts and some loyal readers. Despite its closing in 2017, I never stopped being fond of the texts I wrote.
+      </p>
+      </div>
+      <div class="section"><div class="sectionbegin"></div>
+      <p>
+      However, during my involvement with music and writing, one element was always present: the photos. I wasted hours on the computer looking for images to use as wallpaper. There were pictures of the sunset, snow, the moon, the ocean, wild animals and so on. There was no end! I was mesmerized by the beautiful photos, with the details. I always wanted more! I wanted to see those places. Take those pictures.
+      </p>
+      <p>
+      Of the photos I loved to see, sunrise was the easiest to reproduce. It didn't require traveling to a snowy place or into the middle of the savanna. So that's what I tried to do... for years! And despite having tried every possible configuration that Cybershot offered, no photo has ever come out similar to the ones I so loved to see on the internet. The truth is, I didn't know anything about photography. I learned to use the camera as best I could, but I couldn't understand why the photo didn't turn out as I expected.
+      </p>
+      <p>
+      One day, tired of the terrible family photos, my mother asked me to research a camera that would take "good pictures". With a few months left to finish college and with a much more mature critical sense, I bent over the internet in search of such a camera and got lost in the photographic world. Since then, there have been countless researches about how a camera works, about how a photo is formed and a lot of hands-on work. I still have a very long way to go, but today I can finally look at my photos and be fascinated by how I was as a child.
+      </p>
+      </div>
+      <div class="section"><div class="sectionbegin"></div>
+      <p>
+      Today, homesick for a deactivated blog and with photos piling up on instagram, I made the decision to create a personal website. The main objective is to gather my artistic productions and keep a record for later, but I look forward to the connections that the site can bring me, in addition to the engagement and feedback of people passionate about the same hobbies as me. Without further ado, welcome! I hope the visit is pleasant.
+      </p>
+      </div>
     `;
   }
 }
