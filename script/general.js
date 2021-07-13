@@ -19,10 +19,6 @@ var lst_ids = [
     id: "About",
     func: GetAboutTitle,
   },
-  {
-    id: "Contact",
-    func: GetContactTitle,
-  },
 ];
 
 if (sessionStorage.getItem("lang") == undefined)
@@ -54,6 +50,7 @@ function ChangePageSizes ()
     {
       grid.style.padding = "3px";
       grid.style.gridGap = "7px";
+      grid.style.paddingBottom = "3em";
     }
     var bt = document.getElementsByClassName("langicos")[0];
     if (bt != undefined)

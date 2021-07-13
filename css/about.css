@@ -48,3 +48,24 @@ p{
   margin-right: 1em;
   border-top: 1px solid rgb(0,0,0);
 }
+
+.info{
+  /* position: absolute; */
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+  /* justify-content: center; */
+  padding-bottom: 1rem;
+}
+
+.group{
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.group, img {
+  padding-right: 0.2rem;
+}
