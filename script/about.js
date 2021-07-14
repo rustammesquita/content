@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     photo.style.position = "relative";
     photo.style.width = "auto";
     photo.style.paddingRight = "1em";
+    photo.style.marginTop = "-1.5rem";
     profile.appendChild(photo);
   }
 });
@@ -39,7 +40,7 @@ function GetProfile ()
       <p>
       Eu tive a sorte de ter aula de iniciação musical no colégio, aos 8 anos de idade. Eu amava! Era divertidíssimo. Quando completei 11, ganhei de aniversário um teclado. Eu nunca havia tocado em um teclado ou piano antes, mas no manual havia indicação das notas. Para mim, aquilo foi suficiente. Em minutos eu estava tocando o tema do filme Titanic (minha música preferida, na época). Ai não teve jeito, meus pais tiveram que me por em uma aula particular.
       </p><p>
-      No mesmo ano eu me inscrevi para fazer parte da banda do colégio e fui aceito. Escolhi o saxofone como instrumento, inspirado no gosto musical dos meus pais que adoravam Kenny G. Daí em diante, eu passei a ter contato com diversos instrumentos e músicos. Comecei a tocar na igreja e depois em cerimônias de casamento. Quando entrei pra faculdade, o tempo para estudar música foi diminuindo. Mas certo dia, descobri que faculdade havia uma sala musical com violões disponíveis para os alunos pegarem emprestado. Então eu aprendi a tocar violão nos pequenos intervalos entre as aulas.
+      No mesmo ano eu me inscrevi para fazer parte da banda do colégio e fui aceito. Escolhi o saxofone como instrumento, inspirado no gosto musical dos meus pais que adoravam Kenny G. Daí em diante, eu passei a ter contato com diversos instrumentos e músicos. Comecei a tocar na igreja e depois em cerimônias de casamento. Quando entrei pra faculdade, o tempo para estudar música foi diminuindo. Mas certo dia, descobri que na faculdade havia uma sala musical com violões disponíveis para os alunos pegarem emprestado. Então eu aprendi a tocar violão nos pequenos intervalos entre as aulas.
       </p><p>
       Hoje o meu contato com a música é menor, mas indiscutivelmente, ela foi a minha primeira paixão e eu sigo sendo um músico apaixonado.
       </p>
@@ -65,6 +66,9 @@ function GetProfile ()
       <p>
       Hoje, saudoso por um blog desativado e com fotos se acumulando no instagram, tomei a decisão de criar um site pessoal. O objetivo principal é reunir minhas produções artísticas e manter registro para a posterioridade, mas anseio pelas conexões que o site pode me trazer, além do engajamento e feedback de pessoas apaixonadas pelos mesmos hobbies que eu. Sem mais, sejam bem-vindos! Espero que a visita seja prazerosa.
       </p>
+      <p>
+      Se você gostaria de ter um quadro com uma de minhas fotos, ou fazer um comentário sobre o conteúdo do site, você pode me contactar por email ou direct.
+      </p>
       </div>
     `;
   }
@@ -73,42 +77,45 @@ function GetProfile ()
     return `
       <div class="section"><div class="sectionbegin"></div>
       <p>
-      The story of how I fell in love with photography it's not that exciting, it's just curious. I find it amazing how it all started with a child's fascination. But I can't tell this story without telling you about my other hobbies, since they taught me how to dedicate myself and how to develop my interests. 
+      The story of how I fell in love with photography it's not that exciting. It's just curious. I find it amazing how it all started with a child's fascination. But I can't tell this story without telling you about my other hobbies, since they taught me how to dedicate myself and how to develop my interests.
       </p>
       </div>
       <div class="section"><div class="sectionbegin"></div>
       <p>      
-      I was lucky enough to have an introduction to music class at school when I was 8. I used to love it! I had so much fun. When I turned 11, I got the keyboards as a birthday gift from my parents. I had never played the keyboards before, but the notes chart was enough to get me started. In a matter of minutes I was playing the titanic theme song (my favourite song at the time). After that, my parents put me in a piano class.
+      I was lucky enough to have an introduction to music class at school when I was 8. I used to love it! I had so much fun. When I turned 11, I got the keyboards as a birthday gift from my parents. I had never played the keyboards before, but the notes chart was enough to get me started. In a matter of minutes, I was playing the titanic theme song (my favorite song at the time). After that, my parents put me in a piano class.
       </p>
       <p>      
-      In the same year, I applied to be part of the school band and was accepted. I chose to learn how to play the saxophone, inspired by the musical taste of my parents who adored Kenny G. In the band, I stood in touch with several musicians and had the opportunity to play many instruments. Thereafter, I started playing at church and then at wedding ceremonies. When I entered college, the time to study music started to decrease. But one day, I found out that the college had a music room with acoustic guitars available for students to borrow. So I learned to play the guitar in the short breaks between classes.
+      In the same year, I applied to be part of the school band, and I was accepted. I chose to learn how to play the saxophone, inspired by the musical taste of my parents, who adored Kenny G. In the band, I stood in touch with several musicians and had the opportunity to play many instruments. Years later, I started to play at church and then at wedding ceremonies. When I entered college, the time to study music started to decrease. But one day, I found out that the college had a music room with acoustic guitars available for students to borrow. So I learned to play the guitar in the short breaks between classes.
       </p>
       <p>
-      Today I have less contact with music, I just play now and then, but the music was my first passion and I continue to be in love with it.
-      </p>
-      </div>
-      <div class="section"><div class="sectionbegin"></div>
-      <p>
-      Not all my skills started when I was little. When I lost my great-grandfather in adolescence, I had the impulse to express my sadness in a small text. It was a way to honour him with beautiful words and at the same time materialize that pain outside my body. And it was good. Writing that text briefly softened the feelings. I soon realized that reading it again would keep that sensation.
-      </p>
-      <p>
-      A few years passed and when I had my first heartbreak, I immediately started writing. Initially, I wrote just for myself. But one day, while reading some of my texts, a friend urged me to create a blog. That's how "Sem Dúvidas, Sem Certezas" was created. A blog with romantic texts and reflections on life. Currently inactive, the blog has yielded more than 100 texts and some loyal readers. Despite its closing in 2017, I never stopped being fond of the texts I wrote.
+      Today I play now and then but unfortunately, I have less contact with music. Nevertheless, music was my first passion, and I continue to be in love with it.
       </p>
       </div>
       <div class="section"><div class="sectionbegin"></div>
       <p>
-      However, while I dedicated my time to music and writing, one element was always present: the photos. I wasted hours on the computer looking for images to use as wallpaper. There were pictures of sunsets, snow, the moon, the ocean, wild animals and so on. It was endless! I got mesmerized by the detailed beautiful pictures. I always wanted more! I wanted to see those places. Take those pictures.
+      Not all my skills started when I was little. When I lost my great-grandfather in adolescence, I had the impulse to express my sadness in a small text. It was a way to honor him with beautiful words and, at the same time, materialize that pain outside my body. And it was good. Writing that text briefly softened the feelings.
       </p>
       <p>
-      Among all the kinds of photos I loved to see, a sunrise picture was the easiest one to reproduce. It didn't require me to travel to a snowy place or into the middle of the savanna. So that's what I tried to do... for years! And despite having tried every possible configuration that Cybershot offered, no photo has ever come out similar to the ones I so loved to see on the internet. The truth was I didn't know anything about photography. I had learned to use the camera as best I could, but I couldn't understand why the photo didn't turn out as I hope to be.
-      </p>
-      <p>
-      One day, tired of the terrible family photographs, my mother asked me to research a camera that would take "good pictures". With a few months left to finish college and with much more critical thinking, I looked over the internet in search of such a camera and got lost in the photographic world. Since then, there have been countless researches about how a camera works, about how a photo is formed and a lot of pictures taken. I still have a very long way to go, but today I can finally look at my photos and be fascinated by them as I used to be as a child.
+      A few years passed, and when I had my first heartbreak, I immediately started writing. Initially, I wrote just for myself. But one day, while reading some of my texts, a friend urged me to create a blog. That's how "Sem Dúvidas, Sem Certezas" was created. A blog with romantic texts and reflections on life. Currently inactive, the blog has yielded more than 100 texts and some loyal readers. Despite its closing in 2017, I never stopped being fond of the texts I wrote.
       </p>
       </div>
       <div class="section"><div class="sectionbegin"></div>
       <p>
-      Today, missing the times of writing in a blog and with photos piling up on instagram, I made the decision to create this personal website. The main purpose of it is to gather my artistic productions and keep a record for later, but I also look forward to the feedback of people passionate about the same things I am. Without any further ado, welcome! I hope the visit is pleasant.
+      However, while I dedicated my time to music and writing, one element was always present: the photos. I wasted hours on the computer looking for images to use as wallpaper. There were pictures of sunsets, snow, the moon, the ocean, wild animals, and many more. It was endless! I got mesmerized by the detailed and beautiful pictures. I wanted to see those places. Take those pictures.
+      </p>
+      <p>
+      Among all the kinds of photos I loved to see, a sunrise picture was the easiest to reproduce. It didn't require me to travel to a snowy place or into the middle of the savanna. So that's what I tried to do... for years! And despite having tried every possible configuration that Cybershot offered, no photo has ever come out similar to the ones I so loved to see on the internet. The truth was I didn't know anything about photography. I had learned to use the camera as best as possible, but I couldn't understand why the photo didn't turn out as I hope to be.
+      </p>
+      <p>
+      One day, tired of the terrible family photographs, my mother asked me to find a camera that would take "good pictures". With a few months left to finish college and with much more critical thinking, I looked over the internet searching for such a camera, and I got lost in the photographic world. Since then, there have been countless researches about how a camera works, how a photo is formed, and many pictures taken. I still have a very long way to go, but today I can finally look at my photos and be fascinated by them as I used to be as a child.
+      </p>
+      </div>
+      <div class="section"><div class="sectionbegin"></div>
+      <p>
+      Today, missing the times of writing in a blog and with photos piling up on Instagram, I decided to create this personal website. The primary purpose of it is to gather my artistic productions and keep a record for later, but I also look forward to the feedback of people passionate about the same things I am. Without any further ado, welcome! I hope the visit is pleasant.
+      </p>
+      <p>
+      If you wish to own a printed version of one of my photos or comment on the content of this website, you can contact me via email or direct message.
       </p>
       </div>
     `;
