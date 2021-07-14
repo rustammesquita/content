@@ -25,7 +25,16 @@
   grid-template-columns: max-content;
   place-items: center;
   justify-content: center;
+
+  transition: -webkit-transform 0.25s ease;
+  transition: transform 0.25s ease;
 }
+
+.image:active {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
 
 .prev_area{
   width: 100%;
