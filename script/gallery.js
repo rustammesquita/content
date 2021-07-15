@@ -1,6 +1,7 @@
 
 // Start loading photo grid when html is ready
 document.addEventListener("DOMContentLoaded", LoadPhotos);
+document.addEventListener('contextmenu', event => event.preventDefault());
 
 /**********************************************/
 /*            GLOBAL DEFINITIONS              */
@@ -246,9 +247,9 @@ function CreatePhotoCard (i)
   slideshow.ontouchend = function myFunction(event) {
     if (mouse_x_begin == undefined || mouse_x_end == undefined)
       return;
-    if (mouse_x_begin - mouse_x_end > 3)
+    if (mouse_x_begin - mouse_x_end > 3 && !window.inZoom())
       NextPhoto();
-    else if (mouse_x_begin - mouse_x_end < 3)
+    else if (mouse_x_begin - mouse_x_end < 3 && !window.inZoom())
       PrevPhoto();
 
     mouse_x_begin = undefined;

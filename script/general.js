@@ -1,6 +1,7 @@
 const pt_lang = "pt";
 const eng_lang = "eng";
 const menu_upper_case = true;
+var pinching = false;
 
 var lst_ids = [
   {
@@ -28,6 +29,15 @@ if (sessionStorage.getItem("lang") == undefined)
     sessionStorage.setItem("lang", pt_lang);
   else
     sessionStorage.setItem("lang", eng_lang);
+}
+
+document.addEventListener('gestureend', function(e) {
+  pinching = e.scale > 1.0;
+}, false);
+
+
+window.inZoom = function() {
+  return pinching;
 }
 
 window.isMobile = function() {
