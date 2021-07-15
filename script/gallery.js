@@ -184,6 +184,8 @@ function InsertPhoto (i)
       if (show)
         divphoto.show();
     }
+    
+    InsertPhoto(i+1);
   });
 }
 
@@ -255,8 +257,6 @@ function CreatePhotoCard (i)
     mouse_x_begin = undefined;
     mouse_x_end = undefined;
   }
-  
-  InsertPhoto(i);
 }
 
 function LoadPhotos ()
@@ -280,7 +280,9 @@ function LoadPhotos ()
   
   // Add cards with photos to grid
   for (var i = 0; i < lst_photos.length; ++i)
-  CreatePhotoCard(i);
+    CreatePhotoCard(i);
+  
+  InsertPhoto(0);
 }
 
 function GetPhotoParam ()
