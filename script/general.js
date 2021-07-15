@@ -33,6 +33,7 @@ if (sessionStorage.getItem("lang") == undefined)
 
 document.addEventListener('gestureend', function(e) {
   pinching = e.scale > 1.0;
+  alert(pinching);
 }, false);
 
 
