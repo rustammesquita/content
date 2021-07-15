@@ -171,11 +171,11 @@ function InsertPhoto (i)
   img.addEventListener("load", function()
   {
     var category = sessionStorage.getItem("category");
-    if (category == "All")
+    if (category == undefined || category == "All")
     {
       divphoto.show();
     }
-    else if (category != undefined)
+    else
     {
       var show = false;
       Array.from(photo.categories, cat => {
@@ -353,8 +353,18 @@ function ShowPhoto (i)
   document.getElementsByTagName("body")[0].style.overflow = "hidden";
   
   image.style.borderStyle = "none";
+  var loader = document.getElementsByClassName("lds-spinner")[0];
+  var loaded = false;
+  setInterval(function(){
+    if (!loaded)
+      loader.style.display = "inline-block";
+  }, 500);
+  
+  
   img.addEventListener("load", function()
   {
+    loaded = true;
+    loader.style.display = "none";
     img.className = "zoom";
     image.style.borderStyle = "solid";
     
