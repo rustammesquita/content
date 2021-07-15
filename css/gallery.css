@@ -30,11 +30,14 @@
   transition: transform 0.25s ease;
 }
 
+.image:hover {
+  cursor: zoom-in;
+}
+
 .image:active {
   -webkit-transform: scale(1.5);
   transform: scale(1.5);
 }
-
 
 .prev_area{
   width: 100%;
