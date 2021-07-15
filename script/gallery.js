@@ -1,7 +1,8 @@
 
 // Start loading photo grid when html is ready
 document.addEventListener("DOMContentLoaded", LoadPhotos);
-document.addEventListener('contextmenu', event => event.preventDefault());
+if (window.isMobile())
+  document.addEventListener('contextmenu', event => event.preventDefault());
 
 /**********************************************/
 /*            GLOBAL DEFINITIONS              */
