@@ -358,7 +358,7 @@ function ShowPhoto (i)
   setInterval(function(){
     if (!loaded)
       loader.style.display = "inline-block";
-  }, 500);
+  }, 200);
   
   
   img.addEventListener("load", function()
