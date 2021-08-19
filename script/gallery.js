@@ -262,8 +262,12 @@ function CreatePhotoCard (i)
     }
   }
   slideshow.ontouchend = function myFunction(event) {
-    if (mouse_x_begin == undefined)
+    if (mouse_x_begin == undefined || !image_click)
+    {
+      image_click = false;
       return;
+    }
+    image_click = false;
       
     if (mouse_x_end == undefined)
     {
