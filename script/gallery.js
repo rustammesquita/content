@@ -282,7 +282,7 @@ function CreatePhotoCard (i)
     else if (Math.abs(mouse_x_begin - mouse_x_end) > Math.abs(mouse_y_begin - mouse_y_end))
     {
       if (mouse_x_begin - mouse_x_end > 5 && !window.inZoom())
-        {NextPhoto(); alert("arrastou pra direita"); alert(mouse_x_begin - mouse_x_end);}
+        NextPhoto();
       else if (mouse_x_begin - mouse_x_end < -5 && !window.inZoom())
         PrevPhoto();
     }
