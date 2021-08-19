@@ -1,8 +1,6 @@
 
 // Start loading photo grid when html is ready
-document.addEventListener("DOMContentLoaded", LoadPhotos);
-if (window.isMobile())
-  document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener("DOMContentLoaded", Init);
 
 /**********************************************/
 /*            GLOBAL DEFINITIONS              */
@@ -296,6 +294,25 @@ function CreatePhotoCard (i)
   }
 }
 
+function Init ()
+{
+  if (window.isMobile())
+  {
+    // prevent right button menu from appearing
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    
+    slideshow
+    var slideshow = document.getElementsByClassName("slideshow")[0];
+    var nextdiv   = document.getElementsByClassName("next_area")[0];
+    var prevdiv   = document.getElementsByClassName("prev_area")[0];
+    slideshow.removeChild(nextdiv);
+    slideshow.removeChild(prevdiv);
+    slideshow.style.gridTemplateColumns = "auto";
+  }
+  
+  LoadPhotos();
+}
+
 function LoadPhotos ()
 {
   // Mark current category filter
@@ -418,10 +435,13 @@ function ShowPhoto (i)
 
 function RemoveSelectedPhoto ()
 {
-  var nextdiv = document.getElementsByClassName("next")[0];
-  var prevdiv = document.getElementsByClassName("prev")[0];
-  nextdiv.style.opacity = "0%";
-  prevdiv.style.opacity = "0%";
+  if (!window.isMobile())
+  {
+    var nextdiv = document.getElementsByClassName("next")[0];
+    var prevdiv = document.getElementsByClassName("prev")[0];
+    nextdiv.style.opacity = "0%";
+    prevdiv.style.opacity = "0%";
+  }
   
   var img_div = document.getElementsByClassName("image")[0];
   img_div.style.borderStyle = "none";
