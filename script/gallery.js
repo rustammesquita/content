@@ -262,12 +262,17 @@ function CreatePhotoCard (i)
     }
   }
   slideshow.ontouchend = function myFunction(event) {
-    if (mouse_x_begin == undefined || !image_click)
+    if (mouse_x_begin == undefined)
+      return;
+      
+    var divRect = document.getElementsByClassName('image')[0].getBoundingClientRect();
+    if ( mouse_x_begin < divRect.left   ||
+         mouse_x_begin > divRect.right  ||
+         mouse_y_begin > divRect.bottom ||
+         mouse_y_begin < divRect.top     )
     {
-      image_click = false;
       return;
     }
-    image_click = false;
       
     if (mouse_x_end == undefined)
     {
