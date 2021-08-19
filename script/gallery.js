@@ -13,6 +13,8 @@ var change_photo = false;
 var selected_photo;
 var mouse_x_begin;
 var mouse_x_end;
+var mouse_y_begin;
+var mouse_y_end;
 
 // Fill the structure that contains the text content for a given html element id
 lst_ids = lst_ids.concat(
@@ -237,26 +239,51 @@ function CreatePhotoCard (i)
   var slideshow = document.getElementsByClassName("slideshow")[0];
   slideshow.ontouchstart = function myFunction(event) {
     if (event.touches.length == 1)
+    {
       mouse_x_begin = event.touches[0].clientX;
+      mouse_y_begin = event.touches[0].clientY;
+    }
     else
+    {
       mouse_x_begin = undefined;
+      mouse_y_begin = undefined;
+    }
   }
   slideshow.ontouchmove = function myFunction(event) {
     if (event.touches.length == 1)
+    {
       mouse_x_end = event.touches[0].clientX;
+      mouse_y_end = event.touches[0].clientY;
+    }
     else
+    {
       mouse_x_end = undefined;
+      mouse_y_end = undefined;
+    }
   }
   slideshow.ontouchend = function myFunction(event) {
-    if (mouse_x_begin == undefined || mouse_x_end == undefined)
+    if (mouse_x_begin == undefined)
       return;
-    if (mouse_x_begin - mouse_x_end > 3 && !window.inZoom())
-      NextPhoto();
-    else if (mouse_x_begin - mouse_x_end < 3 && !window.inZoom())
-      PrevPhoto();
+      
+    if (mouse_x_end == undefined)
+    {
+      if (mouse_x_begin > screen.width / 2)
+        NextPhoto();
+      else
+        PrevPhoto();
+    }
+    else if (Math.abs(mouse_x_begin - mouse_x_end) > Math.abs(mouse_y_begin - mouse_y_end))
+    {
+      if (mouse_x_begin - mouse_x_end > 5 && !window.inZoom())
+        {NextPhoto(); alert("arrastou pra direita"); alert(mouse_x_begin - mouse_x_end);}
+      else if (mouse_x_begin - mouse_x_end < -5 && !window.inZoom())
+        PrevPhoto();
+    }
 
     mouse_x_begin = undefined;
     mouse_x_end = undefined;
+    mouse_y_begin = undefined;
+    mouse_y_end = undefined;
   }
 }
 
