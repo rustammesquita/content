@@ -125,7 +125,7 @@
 
 .langicos{
   position: fixed;
-  bottom: 5pt;
+  top: 0.8em;
   right: 0;
   padding-right: 10px;
   animation: show 1s ease-in;

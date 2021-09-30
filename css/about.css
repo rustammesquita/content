@@ -66,6 +66,6 @@ p{
   /* justify-content: center; */
 }
 
-.group, img {
+.group img {
   padding-right: 0.2rem;
 }

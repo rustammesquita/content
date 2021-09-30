@@ -40,7 +40,13 @@ window.isMobile = function() {
   return check;
 };
 
-document.addEventListener("DOMContentLoaded", ChangePageSizes);
+document.addEventListener("DOMContentLoaded", Init);
+
+function Init ()
+{
+  ChangePageSizes();
+  LoadLangButton();
+}
 
 function ChangePageSizes ()
 {
@@ -58,8 +64,24 @@ function ChangePageSizes ()
     }
     var bt = document.getElementsByClassName("langicos")[0];
     if (bt != undefined)
-      bt.style.bottom = "0.25rem";
+      bt.style.top = "0.7rem";
   }
+}
+
+function LoadLangButton ()
+{
+  var lang = sessionStorage.getItem("lang");
+  var content;
+  if (lang == pt_lang)
+  {
+    content = '<a onclick="UseEnglish()"><img src="images/ukico.png" alt="See the website in English" title="See the website in English"></a>';
+  }
+  else
+  {
+    content = '<a onclick="UsePortuguese()"><img src="images/brico.png" alt="Veja o site em Portugu&ecirc;s" title="Veja o site em Portugu&ecirc;s"></a>';
+  }
+  var div_icos = document.getElementsByClassName("ico_bt")[0];
+  div_icos.innerHTML = content;
 }
 
 function RemoveClass (elem, classname)
@@ -135,12 +157,14 @@ function UseEnglish ()
 {
   sessionStorage.setItem("lang", eng_lang);
   UpdatePageTexts();
+  LoadLangButton();
 }
 
 function UsePortuguese ()
 {
   sessionStorage.setItem("lang", pt_lang);
   UpdatePageTexts();
+  LoadLangButton();
 }
 
 function UpdatePageTexts()
