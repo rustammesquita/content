@@ -13,6 +13,8 @@ var mouse_x_begin;
 var mouse_x_end;
 var mouse_y_begin;
 var mouse_y_end;
+var pause_loading = false;
+var next_image_to_load = -1;
 
 // Fill the structure that contains the text content for a given html element id
 lst_ids = lst_ids.concat(
@@ -167,7 +169,7 @@ function InsertPhoto (i)
   var divphoto = cards[i];
   var img = divphoto.lastElementChild;
   var photo = divphoto.photo;
-  img.src = "images/photos/" + "min_" + photo.name;
+  img.src = GetImageFolderPath() + "min_" + photo.name;
   img.addEventListener("load", function()
   {
     var category = sessionStorage.getItem("category");
@@ -186,7 +188,10 @@ function InsertPhoto (i)
         divphoto.show();
     }
     
-    InsertPhoto(i+1);
+    if (pause_loading)
+      next_image_to_load = i+1;
+    else
+      InsertPhoto(i+1);
   });
 }
 
@@ -389,6 +394,7 @@ function GetNextPhotoIndex ()
 
 function ShowPhoto (i)
 {
+  pause_loading = true;
   sessionStorage.setItem("selected_photo", i);
   if (GetPhotoParam() == -1 && window.isMobile())
   {
@@ -397,7 +403,7 @@ function ShowPhoto (i)
   }
   selected_photo = i;
   var img = document.createElement("IMG");
-  img.src = "images/photos/" + lst_photos[i].name;
+  img.src = GetImageFolderPath() + lst_photos[i].name;
   img.className = "zoom hidden";
   
   var image = document.getElementsByClassName("image")[0];
@@ -429,6 +435,13 @@ function ShowPhoto (i)
         nextdiv.style.opacity = "100%";
       if (GetPrevPhotoIndex() < selected_photo)
         prevdiv.style.opacity = "100%";
+    }
+    
+    pause_loading = false;
+    if (next_image_to_load > 0) {
+      var nextphoto = next_image_to_load;
+      next_image_to_load = -1;
+      InsertPhoto(nextphoto);
     }
   });
 }
@@ -533,4 +546,12 @@ function ShowCategory (category)
 function GetCategoryName (name)
 {
   return category_name[name.toLowerCase()]();
+}
+
+function GetImageFolderPath ()
+{
+  if (window.isMobile())
+    return "images/photos/mobile/";
+  else
+    return "images/photos/desktop/";
 }
