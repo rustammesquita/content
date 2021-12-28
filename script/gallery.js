@@ -169,7 +169,6 @@ function InsertPhoto (i)
   var divphoto = cards[i];
   var img = divphoto.lastElementChild;
   var photo = divphoto.photo;
-  img.src = GetImageFolderPath() + "min_" + photo.name;
   img.addEventListener("load", function()
   {
     var category = sessionStorage.getItem("category");
@@ -193,6 +192,8 @@ function InsertPhoto (i)
     else
       InsertPhoto(i+1);
   });
+  
+  img.src = GetImageFolderPath() + "min_" + photo.name;
 }
 
 function CreatePhotoCard (i)
