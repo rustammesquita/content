@@ -402,10 +402,8 @@ function ShowPhoto (i)
     return;
   }
   selected_photo = i;
-  var img = document.createElement("IMG");
-  img.src = GetImageFolderPath() + lst_photos[i].name;
+  var img = document.createElement("IMG");  
   img.className = "zoom hidden";
-  
   var image = document.getElementsByClassName("image")[0];
   document.getElementsByClassName("slideshow")[0].style.display = "grid";
   image.appendChild(img);
@@ -444,6 +442,8 @@ function ShowPhoto (i)
       InsertPhoto(nextphoto);
     }
   });
+  
+  img.src = GetImageFolderPath() + lst_photos[i].name;
 }
 
 function RemoveSelectedPhoto ()
