@@ -551,8 +551,9 @@ function GetCategoryName (name)
 
 function GetImageFolderPath ()
 {
-  if (window.isMobile())
-    return "images/photos/mobile/";
-  else
-    return "images/photos/desktop/";
+  return "images/photos/";
+  // if (window.isMobile())
+  //   return "images/photos/mobile/";
+  // else
+  //   return "images/photos/desktop/";
 }
